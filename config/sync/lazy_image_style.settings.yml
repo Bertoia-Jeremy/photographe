@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: 7-8cb8V5Px0xFAJrJ4j4IjTz6-ZfMLxC5A3h7nQteRg
+lazy_style: base64
+convert: false
+offset: 400
+use: {  }
+responsive_image_use: {  }
+dependencies:
+  config:
+    - image.style.tmp_lazy_image

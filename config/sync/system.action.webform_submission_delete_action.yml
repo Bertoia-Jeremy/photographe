@@ -1,0 +1,13 @@
+uuid: ccb75ab6-bfc9-4aff-8ff0-c72e17c6e582
+langcode: fr
+status: true
+dependencies:
+  module:
+    - webform
+_core:
+  default_config_hash: TBnl4vapW7sy5bRi7TcF-ueJnvz7aZNLif95ifvhfTQ
+id: webform_submission_delete_action
+label: 'Supprimer la soumission'
+type: webform_submission
+plugin: webform_submission_delete_action
+configuration: {  }

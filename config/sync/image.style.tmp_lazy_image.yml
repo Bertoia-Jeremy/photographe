@@ -1,0 +1,17 @@
+uuid: 41d096af-f846-41cf-8dc8-b0984d936b58
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: cWtzP_ws4znETlj9aCEeUkTTDa_Qfw_h5XNCqVqF9nw
+name: tmp_lazy_image
+label: 'Lazy image(tmp)'
+effects:
+  3ad5e1e6-d932-4434-89f1-d3e8473651e1:
+    uuid: 3ad5e1e6-d932-4434-89f1-d3e8473651e1
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 50
+      upscale: false

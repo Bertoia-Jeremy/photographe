@@ -1,0 +1,13 @@
+uuid: 02f0da3c-141f-416c-90e3-7260220e39a0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - webform
+_core:
+  default_config_hash: mPWBT52fKHyINRl9S3cCWFxY3rKbwkIRxaK6sIA26oo
+id: webform_submission_make_sticky_action
+label: 'Mettre en favori/marquer la soumission'
+type: webform_submission
+plugin: webform_submission_make_sticky_action
+configuration: {  }
