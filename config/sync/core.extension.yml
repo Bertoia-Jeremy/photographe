@@ -75,4 +75,6 @@ module:
 theme:
   olivero: 0
   claro: 0
+  stable9: 0
+  material_base: 0
 profile: standard
