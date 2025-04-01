@@ -1,0 +1,66 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\NodeInterface;
+use Drupal\media\Entity\Media;
+use Drupal\file\Entity\File;
+
+/**
+ * Implémente hook_preprocess_block().
+ */
+function base_theme_core_preprocess_block(&$variables) {
+    // Vérifie si c'est bien le bloc de la navigation principale.
+    if (isset($variables['label']) && $variables['label'] === "Navigation principale") {
+        $image_url = NULL;
+
+        // Récupérer la page actuelle.
+        $route_match = \Drupal::routeMatch();
+        $node = $route_match->getParameter('node');
+
+        if ($node instanceof NodeInterface) {
+            // Déterminer le champ image selon le type de contenu.
+            $image_field = 'field_background_image';
+
+            if (
+                $node->bundle() === 'prestation' || 
+                $node->bundle() === 'a_propos' || 
+                $node->bundle() === 'page_contact'
+            ) {
+                $image_field = 'field_thumbnail';
+            }
+
+            // Vérifier si le champ image est présent et non vide.
+            if ($node->hasField($image_field) && !$node->get($image_field)->isEmpty()) {
+                $media_entity = $node->get($image_field)->entity;
+
+                if ($media_entity instanceof Media && $media_entity->hasField('field_media_image')) {
+                    $image = $media_entity->get('field_media_image')->entity;
+                    if ($image instanceof File) {
+                        $image_url = \Drupal::service('file_url_generator')->generateAbsoluteString($image->getFileUri());
+                    }
+                }
+            }
+        }
+
+        // Si aucune image trouvée via le node, prendre celle du bloc lui-même.
+        if (!$image_url && isset($variables['content']['field_background_image'])) {
+            $field_background = $variables['content']['field_background_image'];
+
+            if (!empty($field_background[0]['#media']) && $field_background[0]['#media'] instanceof Media) {
+                $media_entity = $field_background[0]['#media'];
+
+                if ($media_entity->hasField('field_media_image') && !$media_entity->get('field_media_image')->isEmpty()) {
+                    $image = $media_entity->get('field_media_image')->entity;
+                    if ($image instanceof File) {
+                        $image_url = \Drupal::service('file_url_generator')->generateAbsoluteString($image->getFileUri());
+                    }
+                }
+            }
+        }
+
+        // Ajouter à la variable Twig si une image a été trouvée.
+        if ($image_url) {
+            $variables['background_image_url'] = $image_url;
+        }
+    }
+}

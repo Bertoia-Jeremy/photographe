@@ -1,0 +1,19 @@
+uuid: 519110f7-9677-45a4-b275-62e6f10b5274
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_social_picto
+    - paragraphs.paragraphs_type.social_links
+id: paragraph.social_links.field_social_picto
+field_name: field_social_picto
+entity_type: paragraph
+bundle: social_links
+label: 'Picto du réseau social'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

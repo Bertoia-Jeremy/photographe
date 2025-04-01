@@ -1,12 +1,12 @@
-uuid: 76daaacf-9d58-40bd-b97e-55b1091aed68
+uuid: 01853974-a206-4d0e-aafe-52ac232fcbae
 langcode: fr
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 7nuRA2AaypQtPD_xr-tJAwYM67JCE408LQngMZ9rKWw
+  default_config_hash: P_sjL0_0dJWCSa_e0bc6kjambmV4O3sYfVopzJODp_A
 id: date_only
 label: 'Date Only'
-date_format: 'D, M j Y'
+date_format: 'D, j M Y'
 time_format: ''
 time_hour_format: ''
 allday_label: ''

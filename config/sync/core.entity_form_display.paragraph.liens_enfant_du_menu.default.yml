@@ -1,0 +1,25 @@
+uuid: c7fd4971-50e4-45aa-b57c-2ec2ea335440
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.liens_enfant_du_menu.field_lien_enfant
+    - paragraphs.paragraphs_type.liens_enfant_du_menu
+  module:
+    - link
+id: paragraph.liens_enfant_du_menu.default
+targetEntityType: paragraph
+bundle: liens_enfant_du_menu
+mode: default
+content:
+  field_lien_enfant:
+    type: link_default
+    weight: 0
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

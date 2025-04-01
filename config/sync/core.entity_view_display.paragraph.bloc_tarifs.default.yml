@@ -1,0 +1,24 @@
+uuid: 1df5f394-9e0f-41f8-a5b0-01f237629f14
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bloc_tarifs.field_bloc_tarif
+    - paragraphs.paragraphs_type.bloc_tarifs
+  module:
+    - entity_reference_revisions
+id: paragraph.bloc_tarifs.default
+targetEntityType: paragraph
+bundle: bloc_tarifs
+mode: default
+content:
+  field_bloc_tarif:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

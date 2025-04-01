@@ -1,0 +1,15 @@
+{% for item in items %}
+	{% if item['content']['#media'] is defined and item['content']['#media'] is not empty %}
+		{% set class = "visual-block-" ~ loop.index %}
+		{% if loop.index == 2 %}
+			{# Photo en portrait #}
+			{% set item = item|merge({'content': item.content|merge({'#view_mode': '9_16_medium_custom'})}) %}
+		{% endif %}
+	{% else %}
+		{% set class = "text-block flex flex-col justify-center p-4 bg-primary-200 opacity-70 rounded-xl ck-content" %}
+	{% endif %}
+
+	<div class="{{ class }}">
+		{{ item.content }}
+	</div>
+{% endfor %}

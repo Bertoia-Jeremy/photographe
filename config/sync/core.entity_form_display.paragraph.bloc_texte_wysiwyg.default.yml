@@ -1,0 +1,25 @@
+uuid: 96556067-a202-421a-95b9-cda4b27c2b52
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bloc_texte_wysiwyg.field_texte_wysiwyg
+    - paragraphs.paragraphs_type.bloc_texte_wysiwyg
+  module:
+    - text
+id: paragraph.bloc_texte_wysiwyg.default
+targetEntityType: paragraph
+bundle: bloc_texte_wysiwyg
+mode: default
+content:
+  field_texte_wysiwyg:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

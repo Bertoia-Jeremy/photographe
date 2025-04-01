@@ -1,0 +1,43 @@
+.node__content {
+    padding: 0;
+}
+
+.button-class {
+    @apply border-2 border-secondary-200 text-secondary-200 p-3 self-center rounded-md hover:bg-secondary-200 hover:text-tertiary-200;
+}
+
+.go-to-top {
+    @apply w-[53px] h-[53px] fixed right-[30px] bottom-[15px] text-[0.667rem] bg-secondary-200 text-primary-200 
+    border border-solid border-secondary-200 rounded-full opacity-0 invisible flex items-center justify-center cursor-pointer z-[2] 
+    hover:bg-primary-200 hover:text-secondary-200;
+}
+
+a:active,
+a:focus,
+a:focus-visible {
+    outline: none;
+}
+
+.text-content blockquote::after,
+.cke_editable blockquote::after {
+    color: var(--color--primary-60)!important;
+    content: "\201D"!important;
+    inset-block-end: unset!important;
+    inset-inline-end: unset!important;
+    inset-inline-start: unset!important;
+    background: unset!important;
+    font-size: 3.375rem!important;
+}
+
+.cke_editable blockquote p,
+.cke_editable blockquote ul,
+.text-content blockquote p,
+.text-content blockquote ul {
+    display: inline-block!important;
+    max-width: 100%!important;
+}
+
+.div_img img,
+.swiper-content img {
+    @apply rounded-xl max-h-full max-w-full object-cover;
+}

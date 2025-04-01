@@ -1,0 +1,20 @@
+uuid: 32063e56-9ca1-42d1-9067-036cb8def3a1
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.field_visuel
+field_name: field_visuel
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

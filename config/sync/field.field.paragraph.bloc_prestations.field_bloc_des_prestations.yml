@@ -1,0 +1,29 @@
+uuid: 35e0f297-98d6-4913-a1b6-d26eabfa94e5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bloc_des_prestations
+    - node.type.prestation
+    - paragraphs.paragraphs_type.bloc_prestations
+id: paragraph.bloc_prestations.field_bloc_des_prestations
+field_name: field_bloc_des_prestations
+entity_type: paragraph
+bundle: bloc_prestations
+label: 'Bloc des prestations'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      prestation: prestation
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

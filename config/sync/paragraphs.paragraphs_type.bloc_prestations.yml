@@ -1,0 +1,10 @@
+uuid: 662e6df6-fb4b-43a3-84e4-f90d374d1cd1
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_prestations
+label: 'Bloc prestations'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

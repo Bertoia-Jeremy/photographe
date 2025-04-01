@@ -1,11 +1,11 @@
-uuid: 4cee71d4-9db3-4b99-a3c9-5154c82dfa1f
-langcode: fr
+uuid: 6010fd21-fc27-4ea2-81e6-e02fc4ae027f
+langcode: en
 status: true
 dependencies:
   module:
     - file
 id: file.token
 label: Token
-description: ''
+description: null
 targetEntityType: file
 cache: true

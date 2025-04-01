@@ -1,0 +1,28 @@
+uuid: f8add337-e7a2-4380-b91d-c8cc0301c8d4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bloc_des_prestations
+    - node.type.prestation
+id: node.prestation.field_bloc_des_prestations
+field_name: field_bloc_des_prestations
+entity_type: node
+bundle: prestation
+label: 'Bloc des prestations'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      prestation: prestation
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

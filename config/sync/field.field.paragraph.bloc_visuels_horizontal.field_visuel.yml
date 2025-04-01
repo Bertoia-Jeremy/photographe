@@ -1,0 +1,29 @@
+uuid: 9607713a-c70c-45f3-b1b8-4842de8e2fb8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_visuel
+    - media.type.image
+    - paragraphs.paragraphs_type.bloc_visuels_horizontal
+id: paragraph.bloc_visuels_horizontal.field_visuel
+field_name: field_visuel
+entity_type: paragraph
+bundle: bloc_visuels_horizontal
+label: Visuels
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

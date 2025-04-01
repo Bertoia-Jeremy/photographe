@@ -1,0 +1,29 @@
+uuid: 869059d8-c133-4034-a2df-8a9abc8ef950
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_visuel
+    - media.type.image
+    - paragraphs.paragraphs_type.bloc_texte_a_droite_visuel_a_gau
+id: paragraph.bloc_texte_a_droite_visuel_a_gau.field_visuel
+field_name: field_visuel
+entity_type: paragraph
+bundle: bloc_texte_a_droite_visuel_a_gau
+label: Visuel
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

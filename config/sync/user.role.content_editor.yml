@@ -1,47 +1,90 @@
-uuid: 1bac5e19-5ca6-44c1-8786-8847d93a2d17
-langcode: fr
+uuid: 51d50b5d-1316-474a-ae57-a71e466f9bdf
+langcode: en
 status: true
 dependencies:
   config:
-    - node.type.article
-    - node.type.page
-    - taxonomy.vocabulary.tags
+    - block_content.type.footer
+    - block_content.type.navigation_principale
+    - filter.format.content_format
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.svg_image
+    - node.type.a_propos
+    - node.type.accueil
+    - node.type.page_contact
+    - node.type.prestation
+    - workflows.workflow.basic_editorial
   module:
-    - comment
+    - block_content
+    - coffee
+    - content_moderation
     - contextual
     - file
+    - filter
+    - media
+    - metatag
+    - navigation
     - node
     - path
+    - scheduler
     - system
-    - taxonomy
     - toolbar
 _core:
-  default_config_hash: e_wG1u7SrGaJbY2-Szgbgl-c8T3kdirU3uTNq2c_QJQ
+  default_config_hash: g-zSnaBXJnH7VoimReFb6KcLjIgHCU-hisiShtZ9hjQ
 id: content_editor
-label: 'Éditeur de contenu'
+label: 'Content editor'
 weight: 2
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'access coffee'
   - 'access content overview'
   - 'access contextual links'
-  - 'access files overview'
+  - 'access media overview'
+  - 'access navigation'
   - 'access toolbar'
+  - 'administer menu'
+  - 'administer meta tags'
   - 'administer url aliases'
-  - 'create article content'
-  - 'create page content'
-  - 'create terms in tags'
+  - 'create document media'
+  - 'create image media'
+  - 'create prestation content'
+  - 'create remote_video media'
+  - 'create svg_image media'
   - 'create url aliases'
-  - 'delete article revisions'
-  - 'delete own article content'
+  - 'delete any document media'
+  - 'delete any file'
+  - 'delete any image media'
+  - 'delete any remote_video media'
+  - 'delete any svg_image media'
   - 'delete own files'
-  - 'delete own page content'
-  - 'delete page revisions'
-  - 'edit own article content'
-  - 'edit own comments'
-  - 'edit own page content'
-  - 'edit terms in tags'
+  - 'delete own image media'
+  - 'delete own prestation content'
+  - 'edit any a_propos content'
+  - 'edit any accueil content'
+  - 'edit any document media'
+  - 'edit any footer block content'
+  - 'edit any image media'
+  - 'edit any navigation_principale block content'
+  - 'edit any page_contact content'
+  - 'edit any prestation content'
+  - 'edit any remote_video media'
+  - 'edit any svg_image media'
+  - 'edit own a_propos content'
+  - 'edit own accueil content'
+  - 'edit own image media'
+  - 'edit own page_contact content'
+  - 'edit own prestation content'
   - 'revert all revisions'
+  - 'schedule publishing of nodes'
+  - 'use basic_editorial transition create_new_draft'
+  - 'use basic_editorial transition publish'
+  - 'use basic_editorial transition unpublish'
+  - 'use text format content_format'
   - 'view all revisions'
+  - 'view any unpublished content'
   - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view scheduled content'
   - 'view the administration theme'

@@ -1,0 +1,33 @@
+uuid: 1da5bd59-2b30-41b3-a50e-df2f1b54e2f8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bloc_visuels_vertical.field_image_portrait
+    - field.field.paragraph.bloc_visuels_vertical.field_visuel
+    - paragraphs.paragraphs_type.bloc_visuels_vertical
+id: paragraph.bloc_visuels_vertical.default
+targetEntityType: paragraph
+bundle: bloc_visuels_vertical
+mode: default
+content:
+  field_image_portrait:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_visuel:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 16_9_adaptatif_large
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

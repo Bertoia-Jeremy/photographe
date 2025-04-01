@@ -1,0 +1,38 @@
+uuid: 82c6aa20-5f56-4ddc-a2c6-5da1167982b4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.menu_links.field_liens_enfant
+    - field.field.paragraph.menu_links.field_menu_link
+    - paragraphs.paragraphs_type.menu_links
+  module:
+    - entity_reference_revisions
+    - link
+id: paragraph.menu_links.default
+targetEntityType: paragraph
+bundle: menu_links
+mode: default
+content:
+  field_liens_enfant:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_menu_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

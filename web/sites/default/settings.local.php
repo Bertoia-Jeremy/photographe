@@ -5,7 +5,6 @@
  */
 
 assert_options(ASSERT_ACTIVE, true);
-\Drupal\Component\Assertion\Handle::register();
 
 /**
  * Enable local development services.
@@ -66,17 +65,4 @@ if (extension_loaded('xdebug')) {
  * Development trusted host configuration.
  */
 $settings['trusted_host_patterns'] = ['.*'];
-
-/**
- * Update kint nested level
- */
-if (file_exists(DRUPAL_ROOT . '/modules/contrib/devel/kint/kint/Kint.class.php')) {
-    require_once DRUPAL_ROOT . '/modules/contrib/devel/kint/kint/Kint.class.php';
-    Kint::$maxLevels = 4;
-}
-
-/**
- * Update advagg
- */
-$config['advagg.settings']['enabled'] = false;
-$config['advagg.settings']['cache_level'] = 0;
+$conf['theme_debug'] = true;

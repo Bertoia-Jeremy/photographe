@@ -1,15 +1,15 @@
-uuid: 8521f4be-0fe5-4748-8e5a-085682e7be9c
+uuid: 59eaab09-cd00-4abb-a62d-7d3e9e9ef174
 langcode: fr
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: QOzaA8j2871_aWBJyVZm_LqREilQnXZqRuk3HNANrEo
+  default_config_hash: ZsLF7h3GpMlY0-IpckO8KVguBU7ld8YYilkZbBIAGpw
 id: default
 label: défaut
-date_format: 'D, M j Y'
+date_format: 'D, j M Y'
 time_format: 'g:ia'
 time_hour_format: ga
-allday_label: 'All day'
+allday_label: ''
 separator: ' - '
 join: ', '
 ampm_reduce: '1'

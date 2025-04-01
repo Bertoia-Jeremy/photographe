@@ -1,0 +1,13 @@
+@import "tailwindcss/base";
+@import "./base/layout.css";
+@import "./base/typographies.css";
+@import "./base/fonts.css";
+
+@import "tailwindcss/components";
+@import "./components/general.css";
+@import "./components/menu.css";
+@import "./components/paragraphs.css";
+@import "./components/ckeditor-styles.css";
+@import "./components/swiper.css";
+
+@import "tailwindcss/utilities";

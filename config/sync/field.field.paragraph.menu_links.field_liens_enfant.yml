@@ -1,0 +1,64 @@
+uuid: 58060717-5f44-4ca8-bb79-42e2e1864f2f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_liens_enfant
+    - paragraphs.paragraphs_type.liens_enfant_du_menu
+    - paragraphs.paragraphs_type.menu_links
+  module:
+    - entity_reference_revisions
+id: paragraph.menu_links.field_liens_enfant
+field_name: field_liens_enfant
+entity_type: paragraph
+bundle: menu_links
+label: 'Liens enfant'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      liens_enfant_du_menu: liens_enfant_du_menu
+    negate: 0
+    target_bundles_drag_drop:
+      bloc_citation:
+        weight: 13
+        enabled: false
+      bloc_prestations:
+        weight: 14
+        enabled: false
+      bloc_tarifs:
+        weight: 15
+        enabled: false
+      bloc_texte_a_droite_visuel_a_gau:
+        weight: 16
+        enabled: false
+      bloc_texte_a_gauche_visuel_a_dro:
+        weight: 17
+        enabled: false
+      bloc_texte_wysiwyg:
+        weight: 18
+        enabled: false
+      bloc_visuels_horizontal:
+        weight: 19
+        enabled: false
+      bloc_visuels_vertical:
+        weight: 20
+        enabled: false
+      liens_enfant_du_menu:
+        weight: 21
+        enabled: true
+      menu_links:
+        weight: 22
+        enabled: false
+      social_links:
+        weight: 23
+        enabled: false
+      tarif:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

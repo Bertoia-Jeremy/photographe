@@ -1,0 +1,19 @@
+uuid: 5aa86ebb-670c-4a2d-9aab-d091d17635c4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titre
+    - paragraphs.paragraphs_type.tarif
+id: paragraph.tarif.field_titre
+field_name: field_titre
+entity_type: paragraph
+bundle: tarif
+label: Titre
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

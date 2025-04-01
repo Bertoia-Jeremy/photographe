@@ -1,9 +1,9 @@
-uuid: 036df018-17cb-453c-9981-68ee921984cb
+uuid: 26d76cf6-41dd-4a0d-9d39-ea03512076cb
 langcode: fr
 status: true
 dependencies: {  }
 id: fr
-label: French
+label: Français
 direction: ltr
-weight: 1
+weight: -10
 locked: false

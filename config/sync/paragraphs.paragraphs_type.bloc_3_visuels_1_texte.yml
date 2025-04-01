@@ -1,0 +1,10 @@
+uuid: 9c33eb23-65e3-4a34-bdac-f5436f470565
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_3_visuels_1_texte
+label: 'Bloc 3 visuels 1 texte'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

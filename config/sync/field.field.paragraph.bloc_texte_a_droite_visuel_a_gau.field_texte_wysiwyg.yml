@@ -1,0 +1,22 @@
+uuid: 705e2998-23fe-4b8f-8392-e920d1c1f697
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_texte_wysiwyg
+    - paragraphs.paragraphs_type.bloc_texte_a_droite_visuel_a_gau
+  module:
+    - text
+id: paragraph.bloc_texte_a_droite_visuel_a_gau.field_texte_wysiwyg
+field_name: field_texte_wysiwyg
+entity_type: paragraph
+bundle: bloc_texte_a_droite_visuel_a_gau
+label: 'Texte WYSIWYG'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -1,0 +1,25 @@
+uuid: ab768397-73fd-4519-8b38-fec7a93f7e46
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:navigation_principale:19394373-7d36-4fab-a239-ef7fa36ba7cd'
+  module:
+    - block_content
+  theme:
+    - base_theme
+id: base_theme_navigationprincipale1
+theme: base_theme
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'block_content:19394373-7d36-4fab-a239-ef7fa36ba7cd'
+settings:
+  id: 'block_content:19394373-7d36-4fab-a239-ef7fa36ba7cd'
+  label: 'Navigation principale'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

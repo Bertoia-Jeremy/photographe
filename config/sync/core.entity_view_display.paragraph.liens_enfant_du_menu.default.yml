@@ -1,0 +1,27 @@
+uuid: f977b3cc-0c74-43c8-b0c8-56841e6c437f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.liens_enfant_du_menu.field_lien_enfant
+    - paragraphs.paragraphs_type.liens_enfant_du_menu
+  module:
+    - link
+id: paragraph.liens_enfant_du_menu.default
+targetEntityType: paragraph
+bundle: liens_enfant_du_menu
+mode: default
+content:
+  field_lien_enfant:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

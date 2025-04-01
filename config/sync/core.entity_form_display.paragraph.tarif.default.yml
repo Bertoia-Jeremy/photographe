@@ -1,0 +1,42 @@
+uuid: bcd59a67-022d-420f-94fe-9e6a70fb2124
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tarif.field_prix
+    - field.field.paragraph.tarif.field_texte_wysiwyg
+    - field.field.paragraph.tarif.field_titre
+    - paragraphs.paragraphs_type.tarif
+  module:
+    - text
+id: paragraph.tarif.default
+targetEntityType: paragraph
+bundle: tarif
+mode: default
+content:
+  field_prix:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_texte_wysiwyg:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_titre:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

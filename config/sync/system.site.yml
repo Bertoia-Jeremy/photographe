@@ -1,14 +1,14 @@
 _core:
-  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
+  default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
 langcode: fr
-uuid: 2d41c206-a1c2-4137-8d48-652bd7ce6ca6
-name: 'Thomas Fanny Photographie'
-mail: admin@example.com
+uuid: dfd67b6c-8828-4f1f-a17a-9664869056b3
+name: 'Thomas Fanny Photographe'
+mail: jbertoia@debussac.net
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /node/17
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: fr

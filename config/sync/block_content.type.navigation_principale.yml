@@ -1,0 +1,8 @@
+uuid: 483f8bb6-6062-4e5b-9dd3-cc0115c86c1d
+langcode: fr
+status: true
+dependencies: {  }
+id: navigation_principale
+label: 'Navigation principale'
+revision: false
+description: 'Header (En-tête du site)'

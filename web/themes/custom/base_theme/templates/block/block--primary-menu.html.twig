@@ -1,0 +1,279 @@
+{#
+/**
+ * @file
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content of this block.
+ * - attributes: HTML attributes for the containing element.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: HTML attributes for the title element.
+ * - content_attributes: HTML attributes for the content element.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * Headings should be used on navigation menus that consistently appear on
+ * multiple pages. When this menu block's label is configured to not be
+ * displayed, it is automatically made invisible using the 'visually-hidden' CSS
+ * class, which still keeps it visible for screen-readers and assistive
+ * technology. Headings allow screen-reader and keyboard only users to navigate
+ * to or skip the links.
+ * See https://juicystudio.com/article/screen-readers-display-none.php and
+ * https://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
+ */
+#}
+{% import '@base_theme/macros/macros.html.twig' as macros %}
+{%
+  set classes = [
+  'block',
+  'block-menu',
+  'navigation',
+  'menu--' ~ derivative_plugin_id|clean_class,
+  'primary-menu'
+]
+%}
+{% set heading_id = attributes.id ~ '-menu'|clean_id %}
+
+<nav class="navbar-div relative md:absolute md:w-[100%]">
+	<div class="mx-auto flex justify-between items-center p-4">
+		{# LEFT #}
+		<!-- Logo -->
+		<div> 
+			{% if content.field_menu_logo[0]['#media'] is defined %}
+				{% set media_entity = content.field_menu_logo[0]['#media'] %}
+				{% if media_entity.field_media_image is defined %}
+					{% set image_url = media_entity.field_media_image.0.entity.fileuri %}
+					<a href="/" class="block">
+						<img src="{{ file_url(image_url) }}" alt="Logo" class="logo max-w-[100px] md:max-w-[175px]">
+					</a>
+				{% endif %}
+			{% endif %}
+		</div>
+
+		{# CENTER #}
+		<!-- Site Name -->
+		<div class="brand-name-menu text-left mx-2 self-center">
+			<a href="/">
+				{% include "@base_theme/components/brand_name.html.twig" %}
+			</a>
+		</div>
+
+		<div class="md:hidden flex items-center">
+			<div id="menu-burger-mobile" class="min-w-[60px] min-h-[30px] text-secondary-200">
+				<svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path d="M5 6.5H19V8H5V6.5Z" fill="currentColor"/>
+					<path d="M5 16.5H19V18H5V16.5Z" fill="currentColor"/>
+					<path d="M5 11.5H19V13H5V11.5Z" fill="currentColor"/>
+				</svg>
+			</div>
+		</div>
+
+		{# RIGHT #}
+		<div id="overlay" class="overlay"></div>
+		<div class="hidden md:block">
+			<div id="menu-burger" class="menu-burger min-w-[60px] min-h-[30px] cursor-pointer text-secondary-200">
+				<svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path d="M5 6.5H19V8H5V6.5Z" fill="currentColor"/>
+					<path d="M5 16.5H19V18H5V16.5Z" fill="currentColor"/>
+					<path d="M5 11.5H19V13H5V11.5Z" fill="currentColor"/>
+				</svg>
+			</div>
+		</div>
+	</div>
+</nav>
+
+{# Image menu #}
+<div class="menu-img">
+	{% if background_image_url is defined %}
+		<img src="{{ background_image_url }}" alt="Image de fond" class="img-menu w-[100%]">
+	{% endif %}
+
+
+	<div class="h2 bloc-contact-menu flex justify-center md:justify-end">
+		<a href="/contact">
+			<p class="border-2 border-secondary-200 rounded-xl text-secondary-200 p-5 mx-5 text-center md:mr-10">
+				Discutons ensemble de votre projet
+			</p>
+		</a>
+	</div>
+</div>
+
+<!-- Menu Links hidden-->
+<nav
+	id="side-menu" class="side-menu fixed flex-col justify-between items-center w-full h-full bg-tertiary-200 text-secondary-200 justify-center items-center">
+	
+	<!-- Close button -->
+	<button id="close-menu" class="close-menu absolute bg-none text-secondary-200 text-5xl">X</button>
+
+	<!-- Logo -->
+	<div class="w-full h-[20vh] flex justify-center items-center top-10">
+		{% if content.field_menu_logo[0]['#media'] is defined %}
+			{% set media_entity = content.field_menu_logo[0]['#media'] %}
+			{% if media_entity.field_media_image is defined %}
+				{% set image_url = media_entity.field_media_image.0.entity.fileuri %}
+				<a href="/" class="block max-w-[150px] max-h-[150px] md:max-w-[175px] md:max-h-[175px]">
+					<img src="{{ file_url(image_url) }}" alt="Logo" class="logo max-w-[150px] md:max-w-[175px]">
+				</a>
+			{% endif %}
+		{% endif %}
+	</div>
+
+	<!-- Links -->
+	<div class="h-[70vh] flex flex-col justify-center items-center w-full overflow-scroll">
+		<ul class="w-full px-6 text-sm md:text-base lg:text-md">
+			{% for item in content.field_menu_links %}
+				{% if item['#paragraph'] is defined %}
+					{% set paragraph = item['#paragraph'] %}
+
+					{% if paragraph.field_menu_link is defined %}
+						{% set title = paragraph.field_menu_link[0].title %}
+						{% set has_children = paragraph.field_liens_enfant is defined and paragraph.field_liens_enfant|length > 0 %}
+
+						<li class="my-3 py-3 border-b border-secondary-200">
+							{% if has_children %}
+								<button class="toggle-btn hover:text-gray-400 inline-block px-2 py-1 w-full h-[100%] text-left flex justify-between items-center">
+									{{ title }}
+									<span class="transition-transform transform rotate-0 text-sm md:text-base lg:text-md">▼</span>
+								</button>
+
+								<!-- Liste des enfants cachée par défaut -->
+								<ul class="pl-8 pt-4 mt-4 border-t border-secondary-200 w-full hidden">
+									{% for ref in paragraph.field_liens_enfant %}
+										{% if ref.entity is defined and ref.entity.field_lien_enfant is defined %}
+											{% if tilde is defined %}
+												<div class="flex justify-center text-secondary-200 opacity-80">
+													<svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="15px" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="450 370 200 100" xml:space="preserve">
+														<g>
+															<g>
+																<path style="fill:currentColor;" d="M543.726,437.646c-0.677-0.246-1.337-0.518-1.988-0.804c-0.06-0.133-0.157-0.263-0.297-0.384
+																	c-1.018-0.878-2.048-1.68-3.088-2.42c-3.635-2.8-7.383-5.416-11.532-7.218c-2.588-2.063-5.197-4.105-7.996-5.887
+																	c-8.285-5.275-17.753-7.763-27.519-7.911c-1.118-0.017-1.62,1.626-0.585,2.16c6.38,3.289,10.214,8.662,17.136,10.462
+																	c-5.033,0.125-10.078,0.572-15.091,0.117c-4.352-0.395-8.668-1.391-12.964-2.397c-9.058-3.037-16.498-7.257-24.765-12.019
+																	c-5.515-3.177-11.538-6.382-18.072-5.287c-0.818,0.137-1.049,1.309-0.484,1.835c5.69,5.291,11.579,9.097,18.157,11.461
+																	c-3.858-0.157-7.7-0.007-11.442,0.612c-4.459,0.738-8.496,2.52-12.45,4.512c-4.723,1.201-8.775,3.378-13.876,2.359
+																	c-4.326-0.865-8.751-4-8.478-8.965c0.197-3.597,3.824-4.91,6.994-4.333c1.314,0.24,2.712,0.798,3.609,1.838
+																	c0.733,0.841,1.093,1.811,1.081,2.91c-1.171,3.247-2.508,4.029-4.011,2.344c-0.299-0.656-1.458-0.345-1.384,0.375
+																	c0.214,2.069,1.849,2.422,3.78,1.877c2.514-0.711,3.626-2.908,3.291-5.431c-0.651-4.908-6.466-6.59-10.658-5.454
+																	c-5.747,1.557-6.027,7.838-2.926,12.222c3.001,4.241,7.962,5.582,12.891,5.098c-2.184,0.967-4.421,1.807-6.77,2.373
+																	c-7.596,1.833-20.352,1.688-23.964-6.701c-0.52-1.208-2.574-0.346-2.135,0.9c5.589,15.868,30.058,7.634,40.021,2.46
+																	c1.532-0.795,3.044-1.547,4.556-2.244c-3.929,3.078-7.659,6.649-12.077,9.24c-0.879,0.515-0.62,1.744,0.269,2.057
+																	c4.81,1.693,10.235,0.191,14.357-2.686c5.43-3.79,6.267-11.074,13.677-12.779c0.137-0.031,0.24-0.091,0.34-0.152
+																	c0.105-0.004,0.207-0.011,0.312-0.014c7.312-0.178,14.683,0.752,21.841,2.169c6.134,1.214,12.204,2.861,18.386,3.815
+																	c0.609,0.094,1.219,0.152,1.828,0.217c-10.519,1.146-21.111,2.094-31.297-0.592c-1.245-0.329-1.962,1.147-1.193,2.049
+																	c6.395,7.499,13.375,11.577,23.432,8.424c5.29-1.658,9.216-5.651,14.296-7.546c4.54-1.693,9.399-0.46,13.983-1.781
+																	c6.306-0.018,12.444,0.74,18.273,3.053c3.09,2.33,6.276,4.437,9.867,5.828c0.265,0.211,0.531,0.424,0.795,0.634
+																	c0.444,0.354,0.964,0.318,1.358,0.09c0.725,0.211,1.463,0.4,2.226,0.546C544.12,438.809,544.374,437.882,543.726,437.646z
+																	M435.901,428.968c-2.763,2.597-6.444,4.78-10.234,5.842c5.19-3.694,9.616-8.099,15.076-11.042
+																	C439.044,425.401,437.618,427.354,435.901,428.968z M461.635,418.076c-3.293-1.095-6.411-2.521-9.73-4.242
+																	c-3.282-1.702-6.485-3.971-9.835-5.645C449.055,409.204,455.75,414.541,461.635,418.076z M441.448,409.415
+																	c4.102,2.38,8.381,5.477,12.831,7.933c-0.319-0.118-0.643-0.223-0.958-0.353C448.904,415.16,445.042,412.478,441.448,409.415z
+																	M512.994,426.397c0.243,0.02,0.486,0.04,0.729,0.058c-0.236-0.007-0.472-0.01-0.708-0.014
+																	C513.009,426.427,513.002,426.412,512.994,426.397z M520.155,424.705c-7.231-2.897-14.418-5.881-21.638-8.738
+																	C506.38,417.195,513.495,420.184,520.155,424.705z M496.754,416.575c3.291,1.574,6.531,3.195,9.982,4.431
+																	c2.362,0.846,4.698,2.017,7.059,3.123c-3.836-0.289-7.578-0.691-11.148-2.936C500.506,419.845,498.666,418.167,496.754,416.575z
+																	M489.237,430.335c-3.276,1.057-6.52,2.2-10.043,2.463c-4.299,0.321-8.192-0.537-12.12-1.75
+																	C474.316,431.805,481.777,431.163,489.237,430.335z M474.594,436.526c-4.639-0.256-8.056-2.821-11.05-5.935
+																	c6.524,5.064,15.138,4.604,23.083,2.688C482.942,435.342,478.91,436.765,474.594,436.526z"/>
+																<path style="fill:currentColor;" d="M468.572,417.305c1.729,0,1.731-2.686,0-2.686C466.844,414.619,466.841,417.305,468.572,417.305z"/>
+																<path style="fill:currentColor;" d="M475.194,419.875c1.953,0,1.957-3.035,0-3.035C473.241,416.839,473.238,419.875,475.194,419.875z"/>
+																<path style="fill:currentColor;" d="M481.633,421.727c0.034-0.005,0.068-0.009,0.103-0.014c1.204-0.164,1.11-1.807,0.308-2.355
+																	c-0.031-0.021-0.062-0.042-0.093-0.063c-0.795-0.543-1.861,0.102-1.979,0.972C479.834,421.288,480.718,421.851,481.633,421.727z"/>
+																<path style="fill:currentColor;" d="M487.029,423.777c2.079,0,2.083-3.232,0-3.232C484.949,420.545,484.946,423.777,487.029,423.777z"/>
+																<path style="fill:currentColor;" d="M493.792,421.597c-1.995,0-1.999,3.101,0,3.101C495.787,424.698,495.79,421.597,493.792,421.597z"/>
+																<path style="fill:currentColor;" d="M497.671,432.031c-0.043,0.013-0.087,0.026-0.13,0.039c-1.203,0.357-1.205,2.086,0,2.443
+																	c0.043,0.013,0.087,0.026,0.13,0.039c0.818,0.242,1.654-0.426,1.654-1.26C499.325,432.459,498.489,431.789,497.671,432.031z"/>
+																<path style="fill:currentColor;" d="M506.894,430.57c-2.052,0-2.055,3.188,0,3.188C508.946,433.758,508.949,430.57,506.894,430.57z"/>
+																<path style="fill:currentColor;" d="M517.541,430.813c-0.801-1.306-2.91-0.78-2.91,0.788c0,1.566,2.105,2.1,2.91,0.788
+																	c0.012-0.02,0.025-0.04,0.037-0.061c0.264-0.43,0.264-1.025,0-1.455C517.566,430.853,517.554,430.833,517.541,430.813z"/>
+																<path style="fill:currentColor;" d="M523.801,431.459c-1.995,0-1.999,3.101,0,3.101C525.796,434.56,525.8,431.459,523.801,431.459z"/>
+																<path style="fill:currentColor;" d="M531.409,436.221c-1.307,0-1.309,2.031,0,2.031C532.716,438.252,532.718,436.221,531.409,436.221z
+																"/>
+															</g>
+															<g>
+																<path style="fill:currentColor;" d="M546.559,438.678c0.763-0.146,1.5-0.336,2.226-0.546c0.394,0.228,0.914,0.263,1.358-0.09
+																	c0.264-0.21,0.53-0.422,0.795-0.634c3.591-1.391,6.777-3.498,9.867-5.828c5.829-2.313,11.968-3.071,18.273-3.053
+																	c4.584,1.321,9.443,0.087,13.983,1.781c5.079,1.894,9.005,5.887,14.296,7.546c10.057,3.153,17.037-0.925,23.432-8.424
+																	c0.769-0.902,0.052-2.378-1.193-2.049c-10.186,2.686-20.778,1.738-31.297,0.592c0.61-0.065,1.22-0.123,1.828-0.217
+																	c6.183-0.955,12.253-2.601,18.386-3.815c7.158-1.417,14.529-2.348,21.841-2.169c0.105,0.003,0.207,0.01,0.312,0.014
+																	c0.1,0.061,0.203,0.121,0.34,0.152c7.41,1.705,8.247,8.989,13.677,12.779c4.122,2.877,9.547,4.379,14.357,2.686
+																	c0.889-0.313,1.147-1.541,0.269-2.057c-4.419-2.591-8.148-6.162-12.077-9.24c1.512,0.697,3.024,1.449,4.556,2.244
+																	c9.963,5.174,34.431,13.408,40.021-2.46c0.439-1.246-1.616-2.108-2.135-0.9c-3.612,8.389-16.368,8.534-23.963,6.701
+																	c-2.349-0.567-4.586-1.406-6.77-2.373c4.929,0.484,9.891-0.857,12.891-5.098c3.102-4.384,2.821-10.664-2.925-12.222
+																	c-4.192-1.136-10.007,0.547-10.658,5.454c-0.335,2.523,0.777,4.721,3.291,5.431c1.931,0.546,3.566,0.192,3.78-1.877
+																	c0.074-0.72-1.084-1.031-1.384-0.375c-1.503,1.685-2.84,0.903-4.011-2.344c-0.013-1.099,0.348-2.069,1.081-2.91
+																	c0.896-1.04,2.295-1.599,3.609-1.838c3.171-0.578,6.797,0.736,6.994,4.333c0.273,4.966-4.152,8.101-8.478,8.965
+																	c-5.101,1.02-9.152-1.158-13.876-2.359c-3.954-1.993-7.991-3.775-12.45-4.512c-3.742-0.619-7.584-0.769-11.442-0.612
+																	c6.578-2.365,12.466-6.17,18.156-11.461c0.565-0.525,0.334-1.697-0.484-1.835c-6.533-1.095-12.556,2.111-18.072,5.287
+																	c-8.268,4.762-15.707,8.982-24.765,12.019c-4.295,1.006-8.612,2.002-12.964,2.397c-5.013,0.455-10.058,0.007-15.091-0.117
+																	c6.922-1.8,10.756-7.173,17.136-10.462c1.035-0.534,0.533-2.177-0.585-2.16c-9.765,0.148-19.234,2.637-27.518,7.911
+																	c-2.798,1.781-5.408,3.824-7.996,5.887c-4.149,1.803-7.897,4.418-11.532,7.218c-1.04,0.74-2.07,1.542-3.088,2.42
+																	c-0.14,0.121-0.237,0.251-0.297,0.384c-0.65,0.286-1.31,0.558-1.988,0.804C545.626,437.882,545.88,438.809,546.559,438.678z
+																	M649.258,423.768c5.46,2.943,9.885,7.348,15.076,11.042c-3.791-1.062-7.471-3.245-10.234-5.842
+																	C652.382,427.354,650.956,425.401,649.258,423.768z M647.93,408.188c-3.35,1.675-6.553,3.943-9.835,5.645
+																	c-3.319,1.721-6.437,3.147-9.73,4.242C634.25,414.541,640.945,409.204,647.93,408.188z M636.678,416.995
+																	c-0.314,0.13-0.639,0.235-0.958,0.353c4.45-2.457,8.729-5.553,12.831-7.933C644.958,412.478,641.096,415.16,636.678,416.995z
+																	M576.984,426.441c-0.236,0.004-0.472,0.007-0.708,0.014c0.243-0.018,0.486-0.039,0.729-0.058
+																	C576.998,426.412,576.991,426.427,576.984,426.441z M591.483,415.967c-7.22,2.857-14.407,5.841-21.638,8.738
+																	C576.505,420.184,583.62,417.195,591.483,415.967z M587.353,421.192c-3.57,2.245-7.312,2.647-11.148,2.936
+																	c2.361-1.105,4.698-2.277,7.059-3.123c3.451-1.236,6.691-2.857,9.982-4.431C591.334,418.167,589.494,419.845,587.353,421.192z
+																	M622.926,431.049c-3.927,1.213-7.821,2.071-12.12,1.75c-3.523-0.263-6.767-1.406-10.044-2.463
+																	C608.223,431.163,615.684,431.805,622.926,431.049z M603.372,433.28c7.945,1.916,16.56,2.376,23.083-2.688
+																	c-2.994,3.114-6.411,5.679-11.05,5.935C611.09,436.765,607.058,435.342,603.372,433.28z"/>
+																<path style="fill:currentColor;" d="M621.428,417.305c-1.729,0-1.731-2.686,0-2.686C623.156,414.619,623.159,417.305,621.428,417.305z
+																	"/>
+																<path style="fill:currentColor;" d="M614.806,419.875c-1.953,0-1.956-3.035,0-3.035C616.759,416.839,616.762,419.875,614.806,419.875z
+																	"/>
+																<path style="fill:currentColor;" d="M608.367,421.727c-0.034-0.005-0.069-0.009-0.103-0.014c-1.204-0.164-1.11-1.807-0.308-2.355
+																	c0.031-0.021,0.062-0.042,0.093-0.063c0.795-0.543,1.861,0.102,1.979,0.972C610.166,421.288,609.282,421.851,608.367,421.727z"/>
+																<path style="fill:currentColor;" d="M602.971,423.777c-2.08,0-2.083-3.232,0-3.232C605.051,420.545,605.054,423.777,602.971,423.777z"/>
+																<path style="fill:currentColor;" d="M596.208,421.597c1.995,0,1.999,3.101,0,3.101C594.213,424.698,594.21,421.597,596.208,421.597z"/>
+																<path style="fill:currentColor;" d="M592.329,432.031c0.043,0.013,0.087,0.026,0.13,0.039c1.203,0.357,1.205,2.086,0,2.443
+																	c-0.043,0.013-0.087,0.026-0.13,0.039c-0.818,0.242-1.654-0.426-1.654-1.26C590.675,432.459,591.511,431.789,592.329,432.031z"/>
+																<path style="fill:currentColor;" d="M583.106,430.57c2.051,0,2.055,3.188,0,3.188C581.054,433.758,581.051,430.57,583.106,430.57z"/>
+																<path style="fill:currentColor;" d="M572.459,430.813c0.801-1.306,2.91-0.78,2.91,0.788c0,1.566-2.106,2.1-2.91,0.788
+																	c-0.012-0.02-0.025-0.04-0.037-0.061c-0.264-0.43-0.264-1.025,0-1.455C572.434,430.853,572.446,430.833,572.459,430.813z"/>
+																<path style="fill:currentColor;" d="M566.199,431.459c1.995,0,1.999,3.101,0,3.101C564.204,434.56,564.2,431.459,566.199,431.459z"/>
+																<path style="fill:currentColor;" d="M558.591,436.221c1.307,0,1.309,2.031,0,2.031C557.284,438.252,557.282,436.221,558.591,436.221z"/>
+															</g>
+														</g>
+													</svg>
+												</div>
+											{% endif %}
+											{% set link = macros.get_clean_url(ref.entity.field_lien_enfant)|trim %}
+											{% set title = ref.entity.field_lien_enfant[0].title %}
+											<li class="py-1 text-center">
+												<a href="{{ link }}" class="hover:text-gray-400 inline-block w-full">{{ title }}</a>
+											</li>
+
+											{% set tilde = true %}
+										{% endif %}
+									{% endfor %}
+								</ul>
+							{% else %}
+								<!-- Lien normal si pas d'enfant -->
+								<a href="{{ macros.get_clean_url(paragraph.field_menu_link)|trim }}" class="hover:text-gray-400 inline-block px-2 py-1 w-full h-[100%]">
+									{{ title }}
+								</a>
+							{% endif %}
+						</li>
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+
+	<!-- Social Links -->
+	<div class="h-[10vh] w-full bottom-10 flex justify-center items-center">
+		{% set hover = "hover:text-primary-200" %}
+		{% include "@base_theme/components/social_links.html.twig" %}
+	</div>
+</nav>

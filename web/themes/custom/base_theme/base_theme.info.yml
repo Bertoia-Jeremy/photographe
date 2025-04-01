@@ -1,0 +1,21 @@
+name: base_theme
+type: theme
+description: "base_theme"
+core_version_requirement: ^9 || ^10 || ^11
+base theme: drupal_cms_olivero
+
+libraries:
+  - base_theme/global-styling
+
+ckeditor5-stylesheets:
+  - dist/ckeditor-styles.css
+
+regions:
+  header: "Header"
+  primary_menu: "Menu principal"
+  secondary_menu: "Menu secondaire"
+  hero: "Image large (hero)"
+  breadcrumb: "Fil d'Ariane"
+  content: "Contenu"
+  sidebar: Sidebar
+  footer: "Footer"

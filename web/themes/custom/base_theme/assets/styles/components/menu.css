@@ -1,0 +1,91 @@
+.logo {
+    border-radius: 50%;
+}
+
+.bloc-contact-menu {
+    position: absolute;
+    width: 100%;
+    bottom: 25px;
+}
+
+.navbar-div {
+    height: 15vh;
+    min-height: 135px;
+}
+
+.side-menu {
+    top: 0;
+    right: 0;
+    max-width: 400px; /* Largeur limitée en écran large */
+    transform: translateX(100%); /* Position initiale hors de l'écran */
+    transition: transform 0.4s ease-in-out;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    display: none;
+}
+
+.side-menu.active {
+    display: block; /* Rendre visible */
+    transform: translateX(0); /* Glisse dans l'écran */
+}
+
+.close-menu {
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    border: none;
+    cursor: pointer;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 8;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+.img-menu {
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-img {
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .brand-name-menu {
+        max-width: 180px;
+    }
+
+
+    .menu-img, .img-menu {
+        height: 85vh;
+    }
+
+    .side-menu {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .brand-name-menu {
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: white;
+    }
+
+    .menu-img {
+        height: 100vh;
+    }
+}

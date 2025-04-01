@@ -1,0 +1,25 @@
+uuid: 7aef6ff4-954d-439f-8fc9-8a919db091cf
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:footer:c1ca4c6a-7aae-469d-8f0b-e6b49c2cc319'
+  module:
+    - block_content
+  theme:
+    - base_theme
+id: base_theme_blocfooter
+theme: base_theme
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:c1ca4c6a-7aae-469d-8f0b-e6b49c2cc319'
+settings:
+  id: 'block_content:c1ca4c6a-7aae-469d-8f0b-e6b49c2cc319'
+  label: 'Pied de page'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

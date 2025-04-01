@@ -1,0 +1,55 @@
+/* Layout */
+:root {
+    --layoutWidth: 90rem; /* 1440px */
+}
+
+* {
+    word-break: keep-all;
+    hyphens: manual;
+}
+
+
+body {
+    background-image:unset;
+    background: #F2EEE9;
+}
+
+.main-content {
+    width: 100%;
+}
+
+.grid-gutter {
+    @apply gap-x-[0.625rem] md:gap-x-5 gap-y-5;
+}
+
+.layout-grid {
+    @apply
+        grid grid-cols-6 md:grid-cols-12
+        grid-gutter
+        mx-auto max-w-[--layoutWidth] w-full
+        px-5 md:px-10 lg:px-16;
+}
+
+.grid-inset {
+    @apply
+        grid grid-cols-6 md:grid-cols-12
+        grid-gutter
+        w-full;
+}
+
+.layout {
+    @apply
+        mx-auto max-w-[--layoutWidth] w-full
+        px-5 md:px-10 lg:px-16;
+}
+
+.container-fullScreenSmall-in-layout {
+    @apply
+        relative -left-5 md:left-0
+        w-[calc(100%+2.5rem)] md:w-full;
+}
+
+.img-first-banner img{
+    @apply
+        w-[95%];
+}

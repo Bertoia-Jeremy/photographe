@@ -1,0 +1,11 @@
+uuid: 45637641-6366-4aa8-b590-ff549061ebd8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.prestation
+id: node.prestation
+target_entity_type_id: node
+target_bundle: prestation
+default_langcode: site_default
+language_alterable: false

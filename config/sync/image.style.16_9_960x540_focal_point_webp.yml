@@ -1,0 +1,17 @@
+uuid: 10661362-5440-4473-8d07-2e42024efa77
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 4upmuC8xKRxeb0tQRZU2uZrfyHr-q1Zes5ovw71pu5Y
+name: 16_9_960x540_focal_point_webp
+label: '16:9 | 960x540'
+effects:
+  8a518f31-6f4e-4a73-8e00-759e86d8aff7:
+    uuid: 8a518f31-6f4e-4a73-8e00-759e86d8aff7
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 960
+      height: 540
+      anchor: center-center

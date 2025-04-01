@@ -1,0 +1,34 @@
+uuid: 46301f72-fcaf-4851-8277-4297e618f4c3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_links.field_social_link
+    - field.field.paragraph.social_links.field_social_picto
+    - paragraphs.paragraphs_type.social_links
+  module:
+    - link
+id: paragraph.social_links.default
+targetEntityType: paragraph
+bundle: social_links
+mode: default
+content:
+  field_social_link:
+    type: link_default
+    weight: 0
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_social_picto:
+    type: string_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

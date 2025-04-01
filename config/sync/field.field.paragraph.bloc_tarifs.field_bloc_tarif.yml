@@ -1,0 +1,58 @@
+uuid: 469c9df1-f120-4abf-a632-a4aa493a7d08
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bloc_tarif
+    - paragraphs.paragraphs_type.bloc_tarifs
+    - paragraphs.paragraphs_type.tarif
+  module:
+    - entity_reference_revisions
+id: paragraph.bloc_tarifs.field_bloc_tarif
+field_name: field_bloc_tarif
+entity_type: paragraph
+bundle: bloc_tarifs
+label: 'Bloc tarif'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      tarif: tarif
+    negate: 0
+    target_bundles_drag_drop:
+      bloc_citation:
+        weight: 12
+        enabled: false
+      bloc_tarifs:
+        weight: 11
+        enabled: false
+      bloc_texte_a_droite_visuel_a_gau:
+        weight: 13
+        enabled: false
+      bloc_texte_a_gauche_visuel_a_dro:
+        weight: 14
+        enabled: false
+      bloc_texte_wysiwyg:
+        weight: 15
+        enabled: false
+      bloc_visuels_horizontal:
+        weight: 16
+        enabled: false
+      bloc_visuels_vertical:
+        weight: 17
+        enabled: false
+      menu_links:
+        weight: 18
+        enabled: false
+      social_links:
+        weight: 19
+        enabled: false
+      tarif:
+        weight: 20
+        enabled: true
+field_type: entity_reference_revisions

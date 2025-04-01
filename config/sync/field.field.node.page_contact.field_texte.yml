@@ -1,0 +1,22 @@
+uuid: ec1e9a10-0a59-4f83-b4a8-42230f4b4570
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_texte
+    - node.type.page_contact
+  module:
+    - text
+id: node.page_contact.field_texte
+field_name: field_texte
+entity_type: node
+bundle: page_contact
+label: Texte
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

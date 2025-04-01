@@ -1,0 +1,10 @@
+uuid: e7c6abf5-c05d-40a0-8b92-049ecd0236c0
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_tarifs
+label: 'Bloc Tarifs'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

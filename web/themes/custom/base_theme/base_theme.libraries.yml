@@ -1,0 +1,10 @@
+global-styling:
+  vite:
+    enable: true
+    manifest: dist/.vite/manifest.json
+    baseUrl: '/themes/custom/base_theme/dist/'
+    devServerUrl: 'https://vite-3100.dbm-local.com'
+  js:
+    main.js: { attributes: { type: module, defer: true, minified: true } }
+  dependencies:
+    - core/drupalSettings

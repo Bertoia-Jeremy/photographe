@@ -1,0 +1,10 @@
+uuid: a0b4c3ac-8584-439a-9936-48807059d304
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_visuels_vertical
+label: 'Bloc visuels Vertical'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

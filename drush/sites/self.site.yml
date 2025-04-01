@@ -1,0 +1,4 @@
+dev:
+  uri: "https://thomas-fanny-photographie.d9.p83.dbm-local.com"
+preprod:
+  uri: "https://thomas-fanny-photographie.d9.p83.dbm-dev.com"

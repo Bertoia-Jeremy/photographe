@@ -1,0 +1,29 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'flex',
+    'flex-col',
+    'gap-4',
+    'md:grid',
+    'md:layout-grid',
+    'md:grid-cols-25',
+    'md:grid-rows-18',
+    'md:max-h-[95vh]',
+    'md:max-w-[1440px]',
+    'md:mx-12',
+    'xl:mx-16', 
+    'my-16'
+  ]
+%}
+{% block paragraph %}
+	<div class="flex justify-center w-full m-0 p-0">
+		<div{{attributes.addClass(classes)}}>
+			{% block content %}
+				{{ content }}
+			{% endblock %}
+		</div>
+	</div>
+{% endblock paragraph %}

@@ -1,0 +1,83 @@
+uuid: 5d4f9fbc-30ff-4a31-996d-dc0a724caa31
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blocs_modulaire
+    - node.type.a_propos
+    - paragraphs.paragraphs_type.bloc_3_visuels_1_texte
+    - paragraphs.paragraphs_type.bloc_citation
+    - paragraphs.paragraphs_type.bloc_prestations
+    - paragraphs.paragraphs_type.bloc_tarifs
+    - paragraphs.paragraphs_type.bloc_texte_a_droite_visuel_a_gau
+    - paragraphs.paragraphs_type.bloc_texte_a_gauche_visuel_a_dro
+    - paragraphs.paragraphs_type.bloc_texte_wysiwyg
+    - paragraphs.paragraphs_type.bloc_visuels_horizontal
+    - paragraphs.paragraphs_type.bloc_visuels_vertical
+  module:
+    - entity_reference_revisions
+id: node.a_propos.field_blocs_modulaire
+field_name: field_blocs_modulaire
+entity_type: node
+bundle: a_propos
+label: 'Blocs modulaire'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      bloc_visuels_horizontal: bloc_visuels_horizontal
+      bloc_citation: bloc_citation
+      bloc_texte_a_droite_visuel_a_gau: bloc_texte_a_droite_visuel_a_gau
+      bloc_texte_a_gauche_visuel_a_dro: bloc_texte_a_gauche_visuel_a_dro
+      bloc_prestations: bloc_prestations
+      bloc_texte_wysiwyg: bloc_texte_wysiwyg
+      bloc_3_visuels_1_texte: bloc_3_visuels_1_texte
+      bloc_tarifs: bloc_tarifs
+      bloc_visuels_vertical: bloc_visuels_vertical
+    negate: 0
+    target_bundles_drag_drop:
+      bloc_3_visuels_1_texte:
+        weight: 14
+        enabled: true
+      bloc_citation:
+        weight: 10
+        enabled: true
+      bloc_prestations:
+        weight: 13
+        enabled: true
+      bloc_tarifs:
+        weight: 14
+        enabled: true
+      bloc_texte_a_droite_visuel_a_gau:
+        weight: 11
+        enabled: true
+      bloc_texte_a_gauche_visuel_a_dro:
+        weight: 12
+        enabled: true
+      bloc_texte_wysiwyg:
+        weight: 13
+        enabled: true
+      bloc_visuels_horizontal:
+        weight: 9
+        enabled: true
+      bloc_visuels_vertical:
+        weight: 14
+        enabled: true
+      liens_enfant_du_menu:
+        weight: 23
+        enabled: false
+      menu_links:
+        weight: 15
+        enabled: false
+      social_links:
+        weight: 16
+        enabled: false
+      tarif:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

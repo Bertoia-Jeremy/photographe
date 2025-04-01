@@ -1,0 +1,20 @@
+uuid: dbed1d20-0209-485d-977b-d6bff0549ead
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bloc_citation.field_texte
+    - paragraphs.paragraphs_type.bloc_citation
+id: paragraph.bloc_citation.default
+targetEntityType: paragraph
+bundle: bloc_citation
+mode: default
+content:
+  field_texte:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

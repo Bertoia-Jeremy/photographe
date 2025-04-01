@@ -1,0 +1,22 @@
+{%
+    set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+]
+%}
+
+<div class="flex flex-col items-center h-[100%] bg-white rounded-xl shadow-md">
+    <div class="bg-primary-200 price-top w-full rounded-t-xl">
+        <h3 class="uppercase text-white text-center py-4">{{ content.field_titre }}</span>
+    </div>
+    <div class="bg-primary-200 price-middle w-full">
+        <div class="cercle-price border border-tertiary-200 bg-secondary-200">
+            <span class="text-white">{{ content.field_prix }}</span>
+        </div>
+    </div>
+    <div class="bg-white price-bottom w-full p-4 rounded-b-xl ck-content">
+        <span class="text-primary-200">{{ content.field_texte_wysiwyg }}</span>
+    </div>
+</div>

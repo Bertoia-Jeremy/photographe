@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('/themes/custom/base_theme/assets/fonts/Inter-Regular.ttf') format('woff2'),
+        url('/themes/custom/base_theme/assets/fonts/Inter-Regular.woff') format('woff'),
+        url('/themes/custom/base_theme/assets/fonts/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Dancing Script';
+    src: url('/themes/custom/base_theme/assets/fonts/DancingScript-Regular.woff2') format('woff2'),
+        url('/themes/custom/base_theme/assets/fonts/DancingScript-Regular.woff') format('woff'),
+        url('/themes/custom/base_theme/assets/fonts/DancingScript-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Great Vibes';
+    src: url('/themes/custom/base_theme/assets/fonts/GreatVibes-Regular.woff2') format('woff2'),
+        url('/themes/custom/base_theme/assets/fonts/GreatVibes-Regular.woff') format('woff'),
+        url('/themes/custom/base_theme/assets/fonts/GreatVibes-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Parisienne';
+    src: url('/themes/custom/base_theme/assets/fonts/Parisienne-Regular.woff2') format('woff2'),
+        url('/themes/custom/base_theme/assets/fonts/Parisienne-Regular.woff') format('woff'),
+        url('/themes/custom/base_theme/assets/fonts/Parisienne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/themes/custom/base_theme/assets/fonts/Roboto-Regular.woff2') format('woff2'),
+        url('/themes/custom/base_theme/assets/fonts/Roboto-Regular.woff') format('woff'),
+        url('/themes/custom/base_theme/assets/fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('/themes/custom/base_theme/assets/fonts/Lora-Regular.woff2') format('woff2'),
+        url('/themes/custom/base_theme/assets/fonts/Lora-Regular.woff') format('woff'),
+        url('/themes/custom/base_theme/assets/fonts/Lora-Regular.ttf') format('truetype');
+}

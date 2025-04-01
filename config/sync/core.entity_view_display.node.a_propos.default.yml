@@ -1,0 +1,33 @@
+uuid: df046844-0dbd-490a-916e-573dd25ce1ef
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.a_propos.field_blocs_modulaire
+    - field.field.node.a_propos.field_thumbnail
+    - node.type.a_propos
+  module:
+    - entity_reference_revisions
+    - user
+id: node.a_propos.default
+targetEntityType: node
+bundle: a_propos
+mode: default
+content:
+  field_blocs_modulaire:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_thumbnail: true
+  langcode: true

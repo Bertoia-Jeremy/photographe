@@ -1,0 +1,10 @@
+uuid: e792542e-9bdb-4168-8afd-44c567dfdbf6
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_texte_wysiwyg
+label: 'Bloc texte WYSIWYG'
+icon_uuid: null
+icon_default: null
+description: "(What You See Is What You  Get)\r\nCe que tu vois es ce que tu as"
+behavior_plugins: {  }

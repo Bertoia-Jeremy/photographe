@@ -1,0 +1,68 @@
+html {
+    --zoomFactor: 1;
+
+    @apply antialiased font-body leading-6 scroll-smooth text-grey-400;
+    font-size: 16px;
+
+    @media (max-width: 374px) {
+        font-size: clamp(12px, calc(14 * 100dvw / 374), 14px);
+    }
+
+    @media (min-width: 1024px) and (max-width: 1439px) {
+        font-size: clamp(12px, calc(16 * 100dvw / 1440), 16px);
+    }
+
+    @media (min-width: 1441px) and (max-width: 1599px) {
+        font-size: clamp(16px, calc(18 * 100dvw / 1600), 18px);
+    }
+
+    @media (min-width: 1600px) {
+        font-size: 18px;
+    }
+}
+
+.h1, h1 {
+    @apply text-3xl lg:text-5xl font-bold font-title-1 text-center mt-6;
+}
+
+.h2, h2 {
+    @apply font-bold font-title-1
+        text-[calc(1.5rem*var(--zoomFactor))] lg:text-[calc(1.875rem*var(--zoomFactor))]
+        leading-[calc(2rem*var(--zoomFactor))] lg:leading-[calc(2.25rem*var(--zoomFactor))];
+}
+
+.h3, h3 {
+    @apply font-bold font-title-1
+        text-[calc(1.125rem*var(--zoomFactor))] lg:text-[calc(1.25rem*var(--zoomFactor))]
+        leading-[calc(1.75rem*var(--zoomFactor))] lg:leading-[calc(1.75rem*var(--zoomFactor))];
+}
+
+.h4, h4 {
+    @apply font-extrabold font-title-1
+        text-[calc(1.125rem*var(--zoomFactor))] lg:text-[calc(1.25rem*var(--zoomFactor))]
+        leading-[calc(1.75rem*var(--zoomFactor))] lg:leading-[calc(1.75rem*var(--zoomFactor))];
+    font-variant: all-small-caps;
+}
+
+.h5, h5 {
+    @apply font-extrabold font-title-1
+        text-[calc(1rem*var(--zoomFactor))] lg:text-[calc(1.125rem*var(--zoomFactor))]
+        leading-[calc(1.5rem*var(--zoomFactor))] lg:leading-[calc(1.75rem*var(--zoomFactor))];
+    font-variant: all-small-caps;
+}
+
+.h6, h6 {
+    @apply font-extrabold font-title-1
+        text-[calc(0.875rem*var(--zoomFactor))] lg:text-[calc(1rem*var(--zoomFactor))]
+        leading-[calc(1.25rem*var(--zoomFactor))] lg:leading-[calc(1.5rem*var(--zoomFactor))];
+    font-variant: all-small-caps;
+}
+
+.link {
+    @apply text-xs sm:text-sm font-bold font-title-1 transition-colors duration-300;
+}
+
+.tag {
+    @apply text-sm font-title-1 font-bold uppercase pb-0.5;
+    font-variant: all-small-caps;
+}

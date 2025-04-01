@@ -1,0 +1,57 @@
+uuid: 3091b9ca-0c64-40ae-8d8f-cd32ace6c541
+langcode: fr
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.prestation.field_bloc_des_prestations
+    - field.field.node.prestation.field_blocs_modulaire
+    - field.field.node.prestation.field_thumbnail
+    - node.type.prestation
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.prestation.full
+targetEntityType: node
+bundle: prestation
+mode: full
+content:
+  field_bloc_des_prestations:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_blocs_modulaire:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_thumbnail:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

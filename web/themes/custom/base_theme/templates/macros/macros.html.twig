@@ -1,0 +1,26 @@
+{% macro get_clean_url(field) %}
+    {% if field is not empty and field.0.uri is defined and field.0.uri is not empty %}
+        {% set uri = field.0.uri|default('') %}
+
+        {% if uri|slice(0, 9) == 'internal:' %}
+            {% set relative_path = uri|replace({'internal:': ''}) %}
+            {% set url = base_path ~ relative_path %}
+
+        {% elseif uri|slice(0, 7) == 'entity:' %}
+            {% set parts = uri|split(':') %}
+            {% if parts|length > 1 %}
+                {% set entity_id = parts[1] %}
+                
+                {% if entity_id|split('/')|length == 2 %}
+                    {% set node_id = entity_id|split('/')[1] %}
+                    {% set url = path('entity.node.canonical', { 'node': node_id }) %}
+                {% endif %}
+            {% endif %}
+
+        {% else %}
+            {% set url = uri %}
+        {% endif %}
+
+        {{ url }}
+    {% endif %}
+{% endmacro %}

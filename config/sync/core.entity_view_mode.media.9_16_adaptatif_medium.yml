@@ -1,0 +1,11 @@
+uuid: 633fe19b-8cc6-49f3-a3cb-d1b675c1855e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.9_16_adaptatif_medium
+label: '9:16 | Adaptatif | Medium'
+description: ''
+targetEntityType: media
+cache: true

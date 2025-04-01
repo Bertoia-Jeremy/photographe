@@ -1,0 +1,10 @@
+uuid: 9e685afc-a5fe-4b61-b164-135232e5d2ff
+langcode: fr
+status: true
+dependencies: {  }
+id: liens_enfant_du_menu
+label: 'Lien enfant du menu'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

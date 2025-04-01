@@ -1,0 +1,8 @@
+uuid: cecd2128-9084-4aa3-bad6-db1db2d49e74
+langcode: fr
+status: true
+dependencies: {  }
+id: footer
+label: Footer
+revision: false
+description: '(Pied de page)'

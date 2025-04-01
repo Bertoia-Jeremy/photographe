@@ -1,0 +1,15 @@
+features:
+  node_user_picture: true
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 1
+logo:
+  use_default: 0
+  path: sites/default/files/logo-removebg-preview.png
+favicon:
+  use_default: 0
+  path: sites/default/files/logo-removebg-preview.png
+  mimetype: image/png
+mobile_menu_all_widths: 0
+site_branding_bg_color: default
+base_primary_color: '#D7CDBE'

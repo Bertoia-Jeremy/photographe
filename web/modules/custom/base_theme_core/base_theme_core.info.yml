@@ -1,0 +1,9 @@
+name: 'Base Theme Core'
+type: module
+description: 'Module pour gérer les images de fond dynamiquement dans les templates.'
+core_version_requirement: ^10 || ^11
+package: 'Custom'
+dependencies:
+  - drupal:media
+  - drupal:file
+  - drupal:node

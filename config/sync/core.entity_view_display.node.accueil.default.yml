@@ -1,0 +1,31 @@
+uuid: 65af0352-b4f2-454e-b6c1-156147467d76
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.accueil.field_blocs_modulaire
+    - node.type.accueil
+  module:
+    - entity_reference_revisions
+    - user
+id: node.accueil.default
+targetEntityType: node
+bundle: accueil
+mode: default
+content:
+  field_blocs_modulaire:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

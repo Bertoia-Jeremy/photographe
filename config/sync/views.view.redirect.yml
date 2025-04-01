@@ -1,4 +1,4 @@
-uuid: b06194be-3e7d-4430-b4e8-f534565b70e4
+uuid: 93b91cf6-d464-46b6-8c30-385807a0e30e
 langcode: fr
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
     - redirect
     - user
 _core:
-  default_config_hash: I9VqfbwK5ZyKzL7810d0fswaadU6riFT3kPL0yxcpLs
+  default_config_hash: bo9oscq1zl57-jdLbBC_NrcL0AGGUS03Wxcaajpxvrg
 id: redirect
 label: Rediriger
 module: views
@@ -508,6 +508,7 @@ display:
           row_class: ''
           default_row_class: true
           columns:
+            redirect_bulk_form: redirect_bulk_form
             redirect_source__path: redirect_source__path
             redirect_redirect__uri: redirect_redirect__uri
             status_code: status_code
@@ -516,6 +517,11 @@ display:
             operations: operations
           default: created
           info:
+            redirect_bulk_form:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             redirect_source__path:
               sortable: true
               default_sort_order: asc
@@ -546,14 +552,12 @@ display:
               responsive: ''
             created:
               sortable: true
-              default_sort_order: asc
+              default_sort_order: desc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
             operations:
-              sortable: false
-              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false

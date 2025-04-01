@@ -1,0 +1,19 @@
+uuid: 519596b1-1a27-4a63-a1b3-de7d1d9a8d35
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_texte
+    - paragraphs.paragraphs_type.bloc_citation
+id: paragraph.bloc_citation.field_texte
+field_name: field_texte
+entity_type: paragraph
+bundle: bloc_citation
+label: Texte
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,40 @@
+uuid: 8784b6c8-458a-466e-91d0-fd6c408a9819
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.prestation.field_bloc_des_prestations
+    - field.field.node.prestation.field_blocs_modulaire
+    - field.field.node.prestation.field_thumbnail
+    - node.type.prestation
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.prestation.teaser
+targetEntityType: node
+bundle: prestation
+mode: teaser
+content:
+  field_thumbnail:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_bloc_des_prestations: true
+  field_blocs_modulaire: true
+  langcode: true

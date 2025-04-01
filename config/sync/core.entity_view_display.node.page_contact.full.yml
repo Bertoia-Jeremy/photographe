@@ -1,0 +1,32 @@
+uuid: 3fcabdc5-005a-48b8-aab9-d3efaf545ea4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.page_contact.field_texte
+    - field.field.node.page_contact.field_thumbnail
+    - node.type.page_contact
+  module:
+    - text
+    - user
+id: node.page_contact.full
+targetEntityType: node
+bundle: page_contact
+mode: full
+content:
+  field_texte:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_thumbnail: true
+  langcode: true

@@ -1,0 +1,29 @@
+uuid: fa840759-5b03-46b9-a7eb-7c71594d478d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thumbnail
+    - media.type.image
+    - node.type.a_propos
+id: node.a_propos.field_thumbnail
+field_name: field_thumbnail
+entity_type: node
+bundle: a_propos
+label: 'Image de présentation'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

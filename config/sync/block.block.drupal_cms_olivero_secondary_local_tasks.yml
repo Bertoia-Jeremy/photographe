@@ -1,0 +1,22 @@
+uuid: 6acfff02-3693-4c1c-947b-7589e2f200c1
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - drupal_cms_olivero
+_core:
+  default_config_hash: 3KAyDgB3FHENrBwroAUcCPvkfPHBMFcRDnsZFyFMuwc
+id: drupal_cms_olivero_secondary_local_tasks
+theme: drupal_cms_olivero
+region: highlighted
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Onglets secondaires'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

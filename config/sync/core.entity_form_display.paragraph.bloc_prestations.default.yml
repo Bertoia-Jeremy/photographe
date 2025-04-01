@@ -1,0 +1,25 @@
+uuid: ba8d5776-38b0-4c18-8b8f-21b3085817c8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bloc_prestations.field_bloc_des_prestations
+    - paragraphs.paragraphs_type.bloc_prestations
+id: paragraph.bloc_prestations.default
+targetEntityType: paragraph
+bundle: bloc_prestations
+mode: default
+content:
+  field_bloc_des_prestations:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

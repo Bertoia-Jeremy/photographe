@@ -1,0 +1,48 @@
+<?php
+
+use Drupal\file\Entity\File;
+
+function base_theme_theme_suggestions_page_alter(array &$suggestions, array &$variables, $hook)
+{
+
+    $current_path = \Drupal::service('path.current')->getPath();
+    $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+
+    if ($alias !== null && $alias === '/contact') {
+        $suggestions[] = 'page__contact';
+    }
+}
+
+function base_theme_preprocess_paragraph(array &$variables)
+{
+    if (
+        isset($variables['content']['field_visuel']) &&
+        isset($variables['content']['field_visuel'][0]) &&
+        isset($variables['content']['field_image_portrait'])
+    ) {
+        $all_field_visuel = $variables['content']['field_visuel'];
+        foreach ($all_field_visuel as $key => $field_visuel) {
+            if (is_array($field_visuel) && isset($field_visuel['#media'])) {
+                $media_entity = $field_visuel['#media'];
+
+                if ($media_entity->bundle() === 'image' && !$media_entity->get('field_media_image')->isEmpty()) {
+                    $fid = $media_entity->get('field_media_image')->target_id;
+
+                    if ($fid && $file = File::load($fid)) {
+                        $image_path = \Drupal::service('file_system')->realpath($file->getFileUri());
+
+                        if (file_exists($image_path)) {
+                            [$width, $height] = getimagesize($image_path);
+                            $format = (strpos($field_visuel['#view_mode'], 'medium') !== false)
+                                ? "_medium"
+                                : "_large";
+
+                            $view_mode = ($width > $height) ? '16_9_adaptatif' . $format : '9_16' . $format . '_custom';
+                            $variables['content']['field_visuel'][$key]['#view_mode'] = $view_mode;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+uuid: bc12d5d1-ec9f-4fd3-8b0f-dc8136fd72d9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_portrait
+    - paragraphs.paragraphs_type.bloc_visuels_vertical
+id: paragraph.bloc_visuels_vertical.field_image_portrait
+field_name: field_image_portrait
+entity_type: paragraph
+bundle: bloc_visuels_vertical
+label: 'Image Portrait'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

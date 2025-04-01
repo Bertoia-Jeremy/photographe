@@ -1,0 +1,9 @@
+uuid: 30da184c-ca3a-4da5-a770-0af89b22be2f
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: DdVZR131nyy6OVL9mBguPmzKgAzSs-6NjqEdbkF55NI
+id: external_content
+label: 'Embedded external content'
+weight: 6

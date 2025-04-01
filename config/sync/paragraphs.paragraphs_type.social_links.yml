@@ -1,0 +1,10 @@
+uuid: 2f6cd13f-153b-4555-ae79-d67a6f2a885a
+langcode: fr
+status: true
+dependencies: {  }
+id: social_links
+label: 'Social links'
+icon_uuid: null
+icon_default: null
+description: 'Boutons des réseaux sociaux'
+behavior_plugins: {  }

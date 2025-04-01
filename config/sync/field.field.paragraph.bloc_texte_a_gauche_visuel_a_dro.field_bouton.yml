@@ -1,0 +1,23 @@
+uuid: 6280ed50-aa64-4bfc-a598-d1a4b8f7ff57
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bouton
+    - paragraphs.paragraphs_type.bloc_texte_a_gauche_visuel_a_dro
+  module:
+    - link
+id: paragraph.bloc_texte_a_gauche_visuel_a_dro.field_bouton
+field_name: field_bouton
+entity_type: paragraph
+bundle: bloc_texte_a_gauche_visuel_a_dro
+label: Bouton
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

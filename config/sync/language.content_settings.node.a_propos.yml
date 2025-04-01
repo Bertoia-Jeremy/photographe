@@ -1,0 +1,11 @@
+uuid: 6f5275d6-b686-4909-99ce-933e09086514
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.a_propos
+id: node.a_propos
+target_entity_type_id: node
+target_bundle: a_propos
+default_langcode: site_default
+language_alterable: false

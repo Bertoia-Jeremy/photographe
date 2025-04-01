@@ -1,0 +1,17 @@
+uuid: ab48ec41-a343-4837-9dcd-ed70e08aca9b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: B4NGfxDNRMyei-tkT14O5fKT-ThTkmx_NfMx-AenvKQ
+name: 9_16_504x896_focal_point_webp
+label: '9:16 | 405x720'
+effects:
+  a5f7aeb4-3056-4b3c-b03c-62c8b8487c75:
+    uuid: a5f7aeb4-3056-4b3c-b03c-62c8b8487c75
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 405
+      height: 720
+      anchor: center-center

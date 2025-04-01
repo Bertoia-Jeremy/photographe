@@ -1,11 +1,11 @@
-uuid: a3b8a685-d256-4244-b697-1cd9d108cadb
-langcode: fr
+uuid: 10ee83bc-28cf-4b24-8c3f-57fd9e45cd47
+langcode: en
 status: true
 dependencies:
   module:
     - user
 id: user.token
 label: Token
-description: ''
+description: null
 targetEntityType: user
 cache: true

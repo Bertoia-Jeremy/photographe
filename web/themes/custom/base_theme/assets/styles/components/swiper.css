@@ -1,0 +1,16 @@
+.swiper {
+    .swiper-button-prev,
+    .swiper-button-next {
+        @apply text-tertiary-200;
+    }
+}
+
+.swiper-scrollbar {
+    background: #fafaed !important;
+    height: 8px;
+    border-radius: 10px;
+}
+
+.swiper-scrollbar-drag {
+    background: #9f846b !important;
+}

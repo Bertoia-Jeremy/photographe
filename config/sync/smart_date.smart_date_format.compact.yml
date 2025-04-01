@@ -1,12 +1,12 @@
-uuid: e72f23ef-2b2c-449b-ae6d-7557f81cacab
+uuid: a679393f-bcd4-43bf-a16e-ebd6e30b74b6
 langcode: fr
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 3k0ojgMLZae-f358WLWxfKYddQPSaQSnIdAKiYw2wnY
+  default_config_hash: uOom2b0LmPF6XaU3sN2dWpuxSDUxNs89tnIh6WnRois
 id: compact
 label: Compact
-date_format: 'M j Y'
+date_format: 'j M Y'
 time_format: 'g:ia'
 time_hour_format: ga
 allday_label: ''

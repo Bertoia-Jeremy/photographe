@@ -1,0 +1,10 @@
+uuid: d36c22e2-66be-48be-a98f-e1ea7d3e90a3
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_citation
+label: 'Bloc citation'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

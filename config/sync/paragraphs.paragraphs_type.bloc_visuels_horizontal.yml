@@ -1,0 +1,10 @@
+uuid: cf319f33-d112-4d8a-9cc4-1399aa189998
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_visuels_horizontal
+label: 'Bloc visuels Horizontal'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

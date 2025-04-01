@@ -1,0 +1,29 @@
+uuid: c421a455-93c5-4bae-8c1a-bd9f8845c910
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.navigation_principale
+    - field.storage.block_content.field_menu_logo
+    - media.type.image
+id: block_content.navigation_principale.field_menu_logo
+field_name: field_menu_logo
+entity_type: block_content
+bundle: navigation_principale
+label: Logo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,7 @@
+<div class="flex justify-center items-stretch w-full flex-wrap">
+    {% for item in items %}
+        <div class="min-w-[90%] max-w-[90%] md:min-w-[65%] md:max-w-[65%] lg:min-w-[45%] lg:max-w-[45%] m-2">
+            {{ item.content }}
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,10 @@
+uuid: f66677d6-4b60-48c8-801e-a3587e41f9f9
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_texte_a_gauche_visuel_a_dro
+label: 'Bloc texte à gauche + visuel à droite'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

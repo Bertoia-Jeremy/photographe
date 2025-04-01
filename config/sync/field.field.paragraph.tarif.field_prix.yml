@@ -1,0 +1,23 @@
+uuid: 0bd4e525-43d2-489e-9336-1a51a16e1bbb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prix
+    - paragraphs.paragraphs_type.tarif
+id: paragraph.tarif.field_prix
+field_name: field_prix
+entity_type: paragraph
+bundle: tarif
+label: Prix
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: €
+field_type: integer

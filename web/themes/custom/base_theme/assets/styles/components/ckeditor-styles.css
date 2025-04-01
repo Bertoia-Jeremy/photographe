@@ -1,0 +1,86 @@
+@import "../base/fonts.css";
+
+/* .ck-content {
+    @tailwind components;
+    @tailwind base;
+    @tailwind utilities;
+} */
+
+/* STYLE */
+.ck-content p.titre {
+    @apply text-3xl lg:text-5xl mt-6;
+    letter-spacing: 0.15em;
+    word-spacing: 0em;
+    line-height: 1.23em;
+    text-transform: none;
+    font-weight: normal;
+}
+
+.ck-content p.texte {
+    @apply text-[1.125rem] lg:text-[1.25rem] 
+    leading-[1.75rem] lg:leading-[1.75rem];
+    letter-spacing: 0.05em;
+    word-spacing: -0.09em;
+    line-height: 1.53em;
+    text-transform: none;
+    font-weight: normal;
+}
+
+/* FONTS */
+.ck-content span.font-lora {
+    font-family: 'Lora';
+}
+
+.ck-content span.font-roboto {
+    font-family: 'Roboto';
+}
+
+.ck-content span.font-inter {
+    font-family: 'Inter';
+}
+
+.ck-content span.font-dancing-script {
+    font-family: 'Dancing Script';
+}
+
+.ck-content span.font-parisienne {
+    font-family: 'Parisienne';
+}
+
+.ck-content span.font-great-vibes {
+    font-family: 'Great Vibes';
+}
+
+/* COULEUR */
+.ck-content span.couleur-noir {
+    color: black;
+}
+
+.ck-content span.couleur-gris {
+    color: #D4D4D4;
+}
+
+.ck-content span.couleur-primaire {
+    color: #D7CDBE;
+}
+
+.ck-content span.couleur-secondaire {
+    color: #9F846B;
+}
+
+/* TAILLE */
+.ck-content span.text-30 {
+    @apply text-3xl lg:text-5xl;
+}
+.ck-content span.text-24 {
+    @apply text-[1.5rem] lg:text-[1.875rem];
+}
+.ck-content span.text-18 {
+    @apply text-[1.125rem] lg:text-[1.25rem];
+}
+.ck-content span.text-16 {
+    @apply text-[1rem] lg:text-[1.125rem];
+}
+.ck-content span.text-14 {
+    @apply text-[0.875rem] lg:text-[1rem];
+}

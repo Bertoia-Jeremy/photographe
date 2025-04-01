@@ -1,0 +1,35 @@
+uuid: b3105e3f-906a-4c3a-8c1e-96ee960ad90c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_links.field_social_link
+    - field.field.paragraph.social_links.field_social_picto
+    - paragraphs.paragraphs_type.social_links
+  module:
+    - link
+id: paragraph.social_links.default
+targetEntityType: paragraph
+bundle: social_links
+mode: default
+content:
+  field_social_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_social_picto:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
