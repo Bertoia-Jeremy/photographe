@@ -34,22 +34,19 @@
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
-    <head-placeholder token="{{ placeholder_token }}">
+    <head-placeholder token="{{ placeholder_token }}" />
     <title>{{ head_title|safe_join(' | ') }}</title>
-    <css-placeholder token="{{ placeholder_token }}">
+    <css-placeholder token="{{ placeholder_token }}" />
     <link rel="stylesheet" href="/themes/custom/base_theme/dist/main.css">
-    <js-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}" />
     {{ noscript_styles }}
   </head>
 
-
   <body{{ attributes.addClass(body_classes) }}>
-    <a href="#main-content" class="visually-hidden focusable skip-link">
-      {{ 'Skip to main content'|t }}
-    </a>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
-    <js-bottom-placeholder token="{{ placeholder_token }}">
+    <js-bottom-placeholder token="{{ placeholder_token }}" />
+    <script src="/themes/custom/base_theme/dist/main.js"></script>
   </body>
 </html>

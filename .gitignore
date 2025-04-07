@@ -63,3 +63,4 @@ nbproject
 node_modules
 drush/drush.yml
 dist
+!web/themes/custom/base_theme/dist
