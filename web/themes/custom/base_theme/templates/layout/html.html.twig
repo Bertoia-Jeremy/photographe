@@ -34,19 +34,18 @@
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
-    <head-placeholder token="{{ placeholder_token }}" />
+  <link rel="shortcut icon" type="image/x-icon" href="/themes/custom/ville_clermont/assets/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/themes/custom/ville_clermont/assets/images/favicon.ico">
+    <head-placeholder token="{{ placeholder_token }}">
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
-    <css-placeholder token="{{ placeholder_token }}" />
-    <link rel="stylesheet" href="/themes/custom/base_theme/dist/main.css">
-    <js-placeholder token="{{ placeholder_token }}" />
-    {{ noscript_styles }}
   </head>
 
   <body{{ attributes.addClass(body_classes) }}>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
-    <js-bottom-placeholder token="{{ placeholder_token }}" />
-    <script src="/themes/custom/base_theme/dist/main.js"></script>
+    <js-bottom-placeholder token="{{ placeholder_token }}">
   </body>
 </html>
