@@ -25,6 +25,11 @@ AddEncoding gzip svgz
 # Add correct encoding for webp.
 AddType image/webp .webp
 AddType text/css .css
+AddType font/woff2 .woff2
+AddType font/woff .woff
+AddType application/x-font-ttf .ttf
+AddType application/vnd.ms-fontobject .eot
+AddType font/opentype .otf
 
 # Most of the following PHP settings cannot be changed at runtime. See
 # sites/default/default.settings.php and
