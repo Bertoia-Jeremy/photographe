@@ -6,25 +6,22 @@ export default {
   ],
 
   build: {
-    // generate manifest.json in outDir
-    assetsDir: 'assets',
+    outDir: 'dist',
+    emptyOutDir: true,
     manifest: true,
     rollupOptions: {
-      // overwrite default .html entry
-      input: [
-        '/main.js',
-      ],
-      // Remove the [hash] since Drupal will take care of that.
+      input: {
+        main: './main.js',
+      },
       output: {
-        entryFileNames: `[name].js`,
-        chunkFileNames: `chunks/[name].[hash].js`,
-        assetFileNames: `[name].[ext]`
-      }
-    }
+        entryFileNames: 'main.js',
+        assetFileNames: 'main.css',
+      },
+    },
   },
 
   root: '',
-  base: '/',
+  base: '/themes/custom/base_theme/dist/',
 
   server: {
     // required to load scripts from custom host

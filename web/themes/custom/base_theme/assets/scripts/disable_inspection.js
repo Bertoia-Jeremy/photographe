@@ -31,12 +31,4 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("🚨 Inspection interdite !");
         },
     });
-
-    setInterval(function () {
-        devtoolsOpen = false;
-        console.log(element);
-        if (devtoolsOpen) {
-            document.body.innerHTML = "";
-        }
-    }, 1000);
 });

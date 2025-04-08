@@ -1,10 +1,9 @@
 global-styling:
-  vite: true
+  version: 1.x
   css:
-    component:
-      assets/styles/styles.css: {}
+    theme:
+      dist/main.css: {}
   js:
-    main.js: { attributes: { type: module, defer: true } }
-    assets/scripts/script.js: {}
+    dist/main.js: { attributes: { type: module, defer: true } }
   dependencies:
     - core/drupalSettings
