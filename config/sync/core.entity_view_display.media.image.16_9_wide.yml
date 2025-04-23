@@ -1,6 +1,6 @@
 uuid: 55511eae-c34f-4005-90d1-88a4f29a684c
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.media.16_9_wide

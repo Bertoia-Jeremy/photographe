@@ -1,6 +1,6 @@
 uuid: f560fe1e-7afd-4d37-a615-f8726d4637ad
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.media.medium
