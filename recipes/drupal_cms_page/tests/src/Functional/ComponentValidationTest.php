@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\Tests\drupal_cms_page\Functional;
 
+use DMS\PHPUnitExtensions\ArraySubset\ArraySubsetAsserts;
 use Drupal\Core\Entity\EntityDisplayRepositoryInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\FunctionalTests\Core\Recipe\RecipeTestTrait;
@@ -15,6 +16,7 @@ use Drupal\Tests\drupal_cms_content_type_base\ContentModelTestTrait;
  */
 class ComponentValidationTest extends BrowserTestBase {
 
+  use ArraySubsetAsserts;
   use ContentModelTestTrait;
   use RecipeTestTrait;
 
@@ -58,6 +60,11 @@ class ComponentValidationTest extends BrowserTestBase {
       'field_featured_image',
       'field_description',
     ]);
+    $this->assertArraySubset([
+      'field_featured_image' => [
+        'type' => 'entity_reference_entity_view',
+      ],
+    ], $card_display->getComponents());
     $teaser_display = $display_repository->getViewDisplay('node', 'page', 'teaser');
     $this->assertNull($teaser_display->getComponent('links'));
     $this->assertFieldsInOrder($teaser_display, [

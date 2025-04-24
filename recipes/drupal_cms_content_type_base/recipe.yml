@@ -77,12 +77,16 @@ config:
     scheduler.settings:
       simpleConfigUpdate:
         hide_seconds: true
+    trash.settings:
+      simpleConfigUpdate:
+        enabled_entity_types.node: []
     user.role.anonymous:
       # We assume all published content should be accessible to anonymous users.
       grantPermission: 'access content'
     user.role.content_editor:
       grantPermissions:
         - 'access content overview'
+        - 'access trash'
         - 'administer menu'
         - 'use text format content_format'
         - 'use basic_editorial transition unpublish'

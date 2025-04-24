@@ -32,7 +32,9 @@ class PerformanceTest extends PerformanceTestBase {
   public function testPerformance(): void {
     $dir = InstalledVersions::getInstallPath('drupal/drupal_cms_starter');
     $this->applyRecipe($dir);
-
+    // Applying the recipe installs automated cron, but we don't want cron to
+    // run in the middle of a performance test, so uninstall it.
+    \Drupal::service('module_installer')->uninstall(['automated_cron']);
     $this->doTestAnonymousFrontPage();
     $this->doTestEditorFrontPage();
   }
