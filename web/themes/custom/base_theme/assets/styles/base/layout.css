@@ -14,6 +14,11 @@ body {
     background: #F2EEE9;
 }
 
+img {
+    max-height: 90vh;
+    width: auto;
+}
+
 .main-content {
     width: 100%;
 }

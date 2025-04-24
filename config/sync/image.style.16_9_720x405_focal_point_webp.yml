@@ -5,13 +5,13 @@ dependencies: {  }
 _core:
   default_config_hash: bqz7xE0_XoRHk4QP0jCvmAqkcNOt79VIgnSUAqZbVmU
 name: 16_9_720x405_focal_point_webp
-label: '16:9 | 720x405'
+label: '16:9 | 1440x810 (Medium adaptatif)'
 effects:
   b3e65829-59ff-43cc-b16d-d900dcbe4f17:
     uuid: b3e65829-59ff-43cc-b16d-d900dcbe4f17
     id: image_scale_and_crop
     weight: 2
     data:
-      width: 720
-      height: 405
+      width: 1440
+      height: 810
       anchor: center-center

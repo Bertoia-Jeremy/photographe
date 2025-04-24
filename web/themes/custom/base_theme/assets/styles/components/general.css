@@ -37,7 +37,10 @@ a:focus-visible {
     max-width: 100%!important;
 }
 
-.div_img img,
+.div_img img {
+    @apply rounded-xl max-h-[85vh] w-auto object-cover;
+}
+
 .swiper-content img {
-    @apply rounded-xl max-h-full max-w-full object-cover;
+    @apply rounded-xl max-h-[60vh] w-auto object-cover;
 }

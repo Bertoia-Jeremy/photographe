@@ -5,13 +5,13 @@ dependencies: {  }
 _core:
   default_config_hash: B4NGfxDNRMyei-tkT14O5fKT-ThTkmx_NfMx-AenvKQ
 name: 9_16_504x896_focal_point_webp
-label: '9:16 | 405x720'
+label: '9:16 | 810x1440 (Medium Custom)'
 effects:
   a5f7aeb4-3056-4b3c-b03c-62c8b8487c75:
     uuid: a5f7aeb4-3056-4b3c-b03c-62c8b8487c75
     id: image_scale_and_crop
     weight: 1
     data:
-      width: 405
-      height: 720
+      width: 810
+      height: 1440
       anchor: center-center

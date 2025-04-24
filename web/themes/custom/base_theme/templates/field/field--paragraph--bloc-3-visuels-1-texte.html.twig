@@ -1,15 +1,22 @@
 {% for item in items %}
-	{% if item['content']['#media'] is defined and item['content']['#media'] is not empty %}
-		{% set class = "visual-block-" ~ loop.index %}
-		{% if loop.index == 2 %}
-			{# Photo en portrait #}
-			{% set item = item|merge({'content': item.content|merge({'#view_mode': '9_16_medium_custom'})}) %}
-		{% endif %}
-	{% else %}
-		{% set class = "text-block flex flex-col justify-center p-4 bg-primary-200 opacity-70 rounded-xl ck-content" %}
-	{% endif %}
+    {% if item['content']['#media'] is defined and item['content']['#media'] is not empty %}
+        {% set index = loop.index %}
+        {% set class = "visual-block-" ~ index %}
+        {% set aspect = "aspect-[16/9]" %}
 
-	<div class="{{ class }}">
-		{{ item.content }}
-	</div>
+        {% if index == 2 %}
+            {# Portrait #}
+            {% set aspect = "aspect-[9/16]" %}
+            {% set item = item|merge({'content': item.content|merge({'#view_mode': '9_16_medium_custom'})}) %}
+        {% endif %}
+
+        <div class="{{ class }} {{ aspect }} rounded-xl">
+                {{ item.content }}
+        </div>
+    {% else %}
+        {# Bloc texte #}
+        <div class="text-block flex flex-col justify-center p-4 bg-primary-200 opacity-70 rounded-xl ck-content">
+            {{ item.content }}
+        </div>
+    {% endif %}
 {% endfor %}
