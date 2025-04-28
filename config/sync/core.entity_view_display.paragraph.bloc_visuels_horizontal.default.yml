@@ -3,7 +3,6 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.paragraph.bloc_visuels_horizontal.field_image_portrait
     - field.field.paragraph.bloc_visuels_horizontal.field_visuel
     - paragraphs.paragraphs_type.bloc_visuels_horizontal
 id: paragraph.bloc_visuels_horizontal.default
@@ -11,16 +10,6 @@ targetEntityType: paragraph
 bundle: bloc_visuels_horizontal
 mode: default
 content:
-  field_image_portrait:
-    type: boolean
-    label: hidden
-    settings:
-      format: boolean
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_visuel:
     type: entity_reference_entity_view
     label: hidden

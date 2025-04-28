@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.node.prestation.field_bloc_des_prestations
     - field.field.node.prestation.field_blocs_modulaire
+    - field.field.node.prestation.field_metatag
     - field.field.node.prestation.field_thumbnail
     - node.type.prestation
   module:
     - media_library
+    - metatag
     - paragraphs
     - path
 id: node.prestation.default
@@ -50,6 +52,14 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
+  field_metatag:
+    type: metatag_firehose
+    weight: 101
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
   field_thumbnail:
     type: media_library_widget
     weight: 1
@@ -82,6 +92,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

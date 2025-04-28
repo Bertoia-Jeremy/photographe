@@ -3,10 +3,12 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.page_contact.field_metatag
     - field.field.node.page_contact.field_texte
     - field.field.node.page_contact.field_thumbnail
     - node.type.page_contact
   module:
+    - metatag
     - text
     - user
 id: node.page_contact.default
@@ -14,6 +16,13 @@ targetEntityType: node
 bundle: page_contact
 mode: default
 content:
+  field_metatag:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_texte:
     type: text_default
     label: hidden

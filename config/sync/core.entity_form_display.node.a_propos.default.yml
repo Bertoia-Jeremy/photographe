@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.a_propos.field_blocs_modulaire
+    - field.field.node.a_propos.field_metatag
     - field.field.node.a_propos.field_thumbnail
     - node.type.a_propos
   module:
     - media_library
+    - metatag
     - paragraphs
     - path
 id: node.a_propos.default
@@ -38,6 +40,14 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_metatag:
+    type: metatag_firehose
+    weight: 101
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_thumbnail:
     type: media_library_widget
@@ -71,6 +81,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

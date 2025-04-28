@@ -1,0 +1,21 @@
+uuid: 53df0b18-6aac-4cdd-98b9-a25e5db1407f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatag
+    - node.type.accueil
+  module:
+    - metatag
+id: node.accueil.field_metatag
+field_name: field_metatag
+entity_type: node
+bundle: accueil
+label: Metatag
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

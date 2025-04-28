@@ -1,0 +1,21 @@
+uuid: 8f3ac585-b5c5-49be-b3f4-522629792fa8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatag
+    - node.type.prestation
+  module:
+    - metatag
+id: node.prestation.field_metatag
+field_name: field_metatag
+entity_type: node
+bundle: prestation
+label: Metatag
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

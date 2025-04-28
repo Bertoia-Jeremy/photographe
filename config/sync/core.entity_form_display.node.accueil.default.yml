@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.accueil.field_blocs_modulaire
+    - field.field.node.accueil.field_metatag
     - node.type.accueil
   module:
+    - metatag
     - paragraphs
     - path
 id: node.accueil.default
@@ -37,6 +39,14 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
+  field_metatag:
+    type: metatag_firehose
+    weight: 101
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2
@@ -56,6 +66,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

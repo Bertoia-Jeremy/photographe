@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.a_propos.field_blocs_modulaire
+    - field.field.node.a_propos.field_metatag
     - field.field.node.a_propos.field_thumbnail
     - node.type.a_propos
   module:
     - entity_reference_revisions
+    - metatag
     - user
 id: node.a_propos.default
 targetEntityType: node
@@ -22,6 +24,13 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_metatag:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
     region: content
   links:
     settings: {  }

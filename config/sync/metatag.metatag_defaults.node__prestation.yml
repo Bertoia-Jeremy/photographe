@@ -1,0 +1,7 @@
+uuid: 4da103bc-fa98-4360-8ee8-690f38bb9bec
+langcode: fr
+status: true
+dependencies: {  }
+id: node__prestation
+label: 'Contenu: Prestation'
+tags: {  }

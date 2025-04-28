@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.prestation.field_bloc_des_prestations
     - field.field.node.prestation.field_blocs_modulaire
+    - field.field.node.prestation.field_metatag
     - field.field.node.prestation.field_thumbnail
     - node.type.prestation
   module:
@@ -37,4 +38,5 @@ content:
 hidden:
   field_bloc_des_prestations: true
   field_blocs_modulaire: true
+  field_metatag: true
   langcode: true

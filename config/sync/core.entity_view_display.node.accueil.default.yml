@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.accueil.field_blocs_modulaire
+    - field.field.node.accueil.field_metatag
     - node.type.accueil
   module:
     - entity_reference_revisions
+    - metatag
     - user
 id: node.accueil.default
 targetEntityType: node
@@ -21,6 +23,13 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_metatag:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
     region: content
   links:
     settings: {  }

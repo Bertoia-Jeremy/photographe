@@ -1,0 +1,19 @@
+_core:
+  default_config_hash: GUKBlXIBQ2d0H8Q7M_Rqn1Q93tRxLPfs9cG-VeQC9NI
+langcode: fr
+page_title: Sitemap
+path: /sitemap
+message:
+  value: ''
+  format: plain_text
+plugins:
+  frontpage:
+    base_plugin: frontpage
+    enabled: true
+    weight: 0
+    settings:
+      title: "Page d'accueil"
+      rss: ''
+    id: frontpage
+    provider: sitemap
+include_css: true

@@ -3,7 +3,6 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.paragraph.bloc_visuels_horizontal.field_image_portrait
     - field.field.paragraph.bloc_visuels_horizontal.field_visuel
     - paragraphs.paragraphs_type.bloc_visuels_horizontal
   module:
@@ -22,5 +21,4 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_image_portrait: true
   status: true

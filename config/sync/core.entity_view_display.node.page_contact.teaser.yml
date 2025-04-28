@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.page_contact.field_metatag
     - field.field.node.page_contact.field_texte
     - field.field.node.page_contact.field_thumbnail
     - node.type.page_contact
@@ -29,5 +30,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_metatag: true
   field_texte: true
   langcode: true

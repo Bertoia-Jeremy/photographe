@@ -1,0 +1,21 @@
+uuid: 384819c7-f18b-4d30-a708-900b9d7cc74d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatag
+    - node.type.a_propos
+  module:
+    - metatag
+id: node.a_propos.field_metatag
+field_name: field_metatag
+entity_type: node
+bundle: a_propos
+label: Metatag
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.a_propos.field_blocs_modulaire
+    - field.field.node.a_propos.field_metatag
     - field.field.node.a_propos.field_thumbnail
     - node.type.a_propos
   module:
@@ -30,4 +31,5 @@ content:
     region: content
 hidden:
   field_blocs_modulaire: true
+  field_metatag: true
   langcode: true
