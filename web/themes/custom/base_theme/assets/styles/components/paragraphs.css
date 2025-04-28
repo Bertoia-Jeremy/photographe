@@ -142,47 +142,5 @@
 /* --- END PRICE --- */
 
 /* --- 3 VISUEL 1 TEXT --- */
-.grid-cols-25 {
-    grid-template-columns: repeat(25, 1fr);
-}
-
-.grid-row-18 {
-    grid-template-rows: repeat(18, 1fr);
-}
-
-.text-block {
-    grid-column: 1 / span 9;
-    grid-row: 1 / span 4;
-    min-height: 200px;
-}
-
-.visual-block-1 {
-    grid-column: 10 / span 16;
-    grid-row: 1 / span 9;
-}
-/* Portrait */
-.visual-block-2 {
-    grid-column: 1 / span 9;
-    grid-row: 5 / span 14;
-    max-height: 656px;
-}
-
-.visual-block-3 {
-    grid-column: 10 / span 16;
-    grid-row: 10 / span 9;
-}
-
-.visual-block-1 img,
-.visual-block-2 img,
-.visual-block-3 img{
-    @apply rounded-xl max-h-full max-w-full object-cover h-full w-full;
-}
-
-.visual-block-1 div,
-.visual-block-2 div,
-.visual-block-3 div,
-.text-block div{
-    @apply rounded-xl h-full w-full max-h-full max-w-full;
-}
 
 /* --- END 3 VISUEL 1 TEXT --- */
