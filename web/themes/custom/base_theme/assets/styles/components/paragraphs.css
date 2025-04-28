@@ -61,6 +61,7 @@
 .thumbnail-prestation,
 .thumbnail-prestation div img {
     height: 12rem;
+    width: 100%;
 }
 
 .prestation-teaser a span {
