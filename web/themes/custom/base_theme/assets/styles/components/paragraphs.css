@@ -2,7 +2,7 @@
 .media--view-mode-_6-9-adaptatif-large img,
 .media--view-mode-_-16-medium-custom img,
 .media--view-mode-_-16-large-custom img {
-    @apply rounded-xl shadow-md;
+    @apply shadow-md;
 }
 
 .text-img p {
@@ -31,7 +31,7 @@
 }
 
 .thumbnail-prestation div img {
-    @apply rounded-xl shadow-md;
+    @apply shadow-md;
     object-fit: cover;
 }
 

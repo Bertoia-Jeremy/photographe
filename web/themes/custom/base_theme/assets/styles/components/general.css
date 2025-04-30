@@ -38,9 +38,9 @@ a:focus-visible {
 }
 
 .div_img img {
-    @apply rounded-xl max-h-[85vh] w-auto object-cover;
+    @apply max-h-[85vh] w-auto object-cover;
 }
 
 .swiper-content img {
-    @apply rounded-xl max-h-[60vh] w-auto object-cover;
+    @apply max-h-[60vh] w-auto object-cover;
 }
