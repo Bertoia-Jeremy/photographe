@@ -143,4 +143,76 @@
 
 /* --- 3 VISUEL 1 TEXT --- */
 
+@media (max-width: 767px) {
+    .sous-container-area {
+        display: flex;
+        flex-direction: column;
+        gap: 1.125rem;
+    }
+
+    .left-area,
+    .right-area {
+        display: flex;
+        flex-direction: column;
+        gap: 1.125rem;
+    }
+
+    .text-top-left {
+        min-height: 8rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container-area {
+        margin: 0 auto;
+        position: relative;
+        padding: 3.125rem 5.0625rem;
+    }
+
+    .left-area {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: calc(41.5%);
+    }
+
+    .text-top-left {
+        width: 100%;
+        margin-bottom: 1.375rem;
+        height: 25vw;
+    }
+
+    .img-bottom-left {
+        width: 100%;
+        height: 37.1vw;
+        flex-grow: 1;
+    }
+
+    .right-area {
+        width: calc(100% - 41.5% - 1.375rem);
+        margin-left: 1.375rem;
+    }
+
+    .img-top-right img,
+    .img-bottom-right img,
+    .img-bottom-left img {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .img-bottom-right {
+        width: 100%;
+        height: 31.1vw;
+    }
+
+    .img-top-right {
+        width: 100%;
+        height: 31.1vw;
+        margin-bottom: 1.375rem;
+        
+    }
+}
 /* --- END 3 VISUEL 1 TEXT --- */
