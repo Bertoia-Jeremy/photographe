@@ -17,27 +17,29 @@ function base_theme_preprocess_paragraph(array &$variables)
 {
     if (
         isset($variables['content']['field_visuel']) &&
-        isset($variables['content']['field_visuel'][0]) &&
-        isset($variables['content']['field_image_portrait'])
+        isset($variables['content']['field_visuel'][0])
     ) {
         $all_field_visuel = $variables['content']['field_visuel'];
         foreach ($all_field_visuel as $key => $field_visuel) {
             if (is_array($field_visuel) && isset($field_visuel['#media'])) {
                 $media_entity = $field_visuel['#media'];
-
-                if ($media_entity->bundle() === 'image' && !$media_entity->get('field_media_image')->isEmpty()) {
+                
+                if ($media_entity->bundle() === 'image' && 
+                    !$media_entity->get('field_media_image')->isEmpty() &&
+                    !$media_entity->get('field_image_portrait')->isEmpty() && 
+                    $media_entity->get('field_image_portrait')->value == "1"
+                ) {
                     $fid = $media_entity->get('field_media_image')->target_id;
 
                     if ($fid && $file = File::load($fid)) {
                         $image_path = \Drupal::service('file_system')->realpath($file->getFileUri());
 
                         if (file_exists($image_path)) {
-                            [$width, $height] = getimagesize($image_path);
                             $format = (strpos($field_visuel['#view_mode'], 'medium') !== false)
                                 ? "_medium"
                                 : "_large";
 
-                            $view_mode = ($width > $height) ? '16_9_adaptatif' . $format : '9_16' . $format . '_custom';
+                            $view_mode = '9_16' . $format . '_custom';
                             $variables['content']['field_visuel'][$key]['#view_mode'] = $view_mode;
                         }
                     }

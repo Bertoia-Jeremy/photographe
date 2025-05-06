@@ -4,6 +4,7 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.media.4_3_large
+    - field.field.media.image.field_image_portrait
     - field.field.media.image.field_media_image
     - media.type.image
 _core:
@@ -15,6 +16,7 @@ mode: 4_3_large
 content: {  }
 hidden:
   created: true
+  field_image_portrait: true
   field_media_image: true
   langcode: true
   name: true

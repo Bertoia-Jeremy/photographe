@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.16_9_adaptatif_medium
+    - field.field.media.image.field_image_portrait
     - field.field.media.image.field_media_image
     - image.style.16_9_720x405_focal_point_webp
     - media.type.image
@@ -34,10 +35,11 @@ content:
         height: null
       svg_render_as_image: true
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   created: true
+  field_image_portrait: true
   langcode: true
   name: true
   thumbnail: true

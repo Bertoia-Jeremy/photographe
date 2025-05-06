@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.bloc_texte_a_droite_visuel_a_gau.field_bouton
-    - field.field.paragraph.bloc_texte_a_droite_visuel_a_gau.field_image_portrait
     - field.field.paragraph.bloc_texte_a_droite_visuel_a_gau.field_texte_wysiwyg
     - field.field.paragraph.bloc_texte_a_droite_visuel_a_gau.field_titre_h2
     - field.field.paragraph.bloc_texte_a_droite_visuel_a_gau.field_visuel
@@ -28,16 +27,6 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_image_portrait:
-    type: boolean
-    label: hidden
-    settings:
-      format: boolean
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_texte_wysiwyg:
     type: text_default

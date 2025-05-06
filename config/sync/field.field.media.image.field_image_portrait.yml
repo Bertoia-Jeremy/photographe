@@ -1,0 +1,21 @@
+uuid: d4407497-1e5f-4ce6-9957-47fcdb43c9e9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_image_portrait
+    - media.type.image
+id: media.image.field_image_portrait
+field_name: field_image_portrait
+entity_type: media
+bundle: image
+label: 'Image portrait'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

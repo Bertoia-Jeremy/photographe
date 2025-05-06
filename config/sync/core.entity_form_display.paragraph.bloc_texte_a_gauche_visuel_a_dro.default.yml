@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.bloc_texte_a_gauche_visuel_a_dro.field_bouton
-    - field.field.paragraph.bloc_texte_a_gauche_visuel_a_dro.field_image_portrait
     - field.field.paragraph.bloc_texte_a_gauche_visuel_a_dro.field_texte_wysiwyg
     - field.field.paragraph.bloc_texte_a_gauche_visuel_a_dro.field_titre_h2
     - field.field.paragraph.bloc_texte_a_gauche_visuel_a_dro.field_visuel
@@ -51,5 +50,4 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_image_portrait: true
   status: true
