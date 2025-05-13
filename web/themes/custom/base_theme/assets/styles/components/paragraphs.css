@@ -179,7 +179,6 @@
     .text-top-left {
         width: 100%;
         margin-bottom: 1.375rem;
-        height: 25vw;
     }
 
     .img-bottom-left {
@@ -219,6 +218,7 @@
     @media (max-width: 1024px) {
         .right-area {
             display: grid;
+            align-content: space-between;
         }
     
         .container-area {

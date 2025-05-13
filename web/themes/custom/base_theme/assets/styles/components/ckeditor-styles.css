@@ -8,7 +8,7 @@
 
 /* STYLE */
 .ck-content p.titre {
-    @apply text-3xl lg:text-5xl mt-6;
+    @apply text-3xl lg:text-5xl;
     letter-spacing: 0.15em;
     word-spacing: 0em;
     line-height: 1.23em;
