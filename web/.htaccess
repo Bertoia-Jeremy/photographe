@@ -3,18 +3,6 @@
 #
 
 # Protect files and directories from prying eyes.
-# Performance settings
-<IfModule mod_deflate.c>
-    SetOutputFilter DEFLATE
-    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
-</IfModule>
-
-# HTTP/2 settings
-<IfModule mod_http2.c>
-    H2Push off
-    H2PushResource off
-</IfModule>
-
 <FilesMatch "\.(engine|inc|install|make|module|profile|po|sh|.*sql|theme|twig|tpl(\.php)?|xtmpl|yml)(~|\.sw[op]|\.bak|\.orig|\.save)?$|^(\.(?!well-known).*|Entries.*|Repository|Root|Tag|Template|composer\.(json|lock)|web\.config|yarn\.lock|package\.json)$|^#.*#$|\.php(~|\.sw[op]|\.bak|\.orig|\.save)$">
   <IfModule mod_authz_core.c>
     Require all denied
@@ -36,12 +24,6 @@ AddEncoding gzip svgz
 
 # Add correct encoding for webp.
 AddType image/webp .webp
-AddType text/css .css
-AddType font/woff2 .woff2
-AddType font/woff .woff
-AddType application/x-font-ttf .ttf
-AddType application/vnd.ms-fontobject .eot
-AddType font/opentype .otf
 
 # Most of the following PHP settings cannot be changed at runtime. See
 # sites/default/default.settings.php and
@@ -87,11 +69,6 @@ AddType font/opentype .otf
   RewriteRule ^ - [E=protossl]
   RewriteCond %{HTTPS} on
   RewriteRule ^ - [E=protossl:s]
-
-  # Rediriger tout le trafic HTTP vers HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # Make sure Authorization HTTP header is available to PHP
   # even when running as CGI or FastCGI.
@@ -170,31 +147,15 @@ AddType font/opentype .otf
   # Rules to correctly serve gzip compressed CSS and JS files.
   # Requires both mod_rewrite and mod_headers to be enabled.
   <IfModule mod_headers.c>
-    # Fix for HTTP/2 issues
-    Header set Connection keep-alive
-    Header set Keep-Alive "timeout=300, max=100"
-    
-    # Adjust compression settings
-    SetEnv no-gzip 1
-    SetEnv no-brotli 1
-    
-    # Additional security headers
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-    Header always set X-Frame-Options "SAMEORIGIN"
-    Header always set X-XSS-Protection "1; mode=block"
-    Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    
-    # Cache control
-    Header set Cache-Control "max-age=3600, public"
     # Serve gzip compressed CSS files if they exist and the client accepts gzip.
-    # RewriteCond %{HTTP:Accept-encoding} gzip
-    # RewriteCond %{REQUEST_FILENAME}\.gz -s
-    # RewriteRule ^(.*css_[a-zA-Z0-9-_]+)\.css$ $1\.css\.gz [QSA]
+    RewriteCond %{HTTP:Accept-encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}\.gz -s
+    RewriteRule ^(.*css_[a-zA-Z0-9-_]+)\.css$ $1\.css\.gz [QSA]
 
     # Serve gzip compressed JS files if they exist and the client accepts gzip.
-    # RewriteCond %{HTTP:Accept-encoding} gzip
-    # RewriteCond %{REQUEST_FILENAME}\.gz -s
-    # RewriteRule ^(.*js_[a-zA-Z0-9-_]+)\.js$ $1\.js\.gz [QSA]
+    RewriteCond %{HTTP:Accept-encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}\.gz -s
+    RewriteRule ^(.*js_[a-zA-Z0-9-_]+)\.js$ $1\.js\.gz [QSA]
 
     # Serve correct content types, and prevent double compression.
     RewriteRule \.css\.gz$ - [T=text/css,E=no-gzip:1,E=no-brotli:1]

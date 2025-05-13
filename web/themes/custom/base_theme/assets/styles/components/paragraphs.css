@@ -193,6 +193,7 @@
         margin-left: 1.375rem;
     }
 
+    
     .img-top-right img,
     .img-bottom-right img,
     .img-bottom-left img {
@@ -202,17 +203,27 @@
         object-fit: cover;
         object-position: center center;
     }
-
+    
     .img-bottom-right {
         width: 100%;
         height: 31.1vw;
     }
-
+    
     .img-top-right {
         width: 100%;
         height: 31.1vw;
         margin-bottom: 1.375rem;
         
+    }
+
+    @media (max-width: 1024px) {
+        .right-area {
+            display: grid;
+        }
+    
+        .container-area {
+            padding: 3.125rem 0;
+        }
     }
 }
 /* --- END 3 VISUEL 1 TEXT --- */
