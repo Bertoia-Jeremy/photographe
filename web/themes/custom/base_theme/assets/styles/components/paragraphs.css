@@ -67,6 +67,7 @@
 .prestation-teaser a span {
     transition: color 0.3s ease-in-out;
     z-index: 1;
+    text-align: center;
 }
 
 .teaser-column:hover .overlay-thumbnail-wall {
@@ -144,6 +145,10 @@
 /* --- 3 VISUEL 1 TEXT --- */
 
 @media (max-width: 767px) {
+    .container-area {
+        margin: 20px 0px;
+    }
+
     .sous-container-area {
         display: flex;
         flex-direction: column;
